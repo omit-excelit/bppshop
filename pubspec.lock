@@ -147,14 +147,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.18.0"
   js:
     dependency: transitive
     description:
@@ -328,14 +320,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  syncfusion_flutter_charts:
-    dependency: "direct main"
-    description:
-      name: syncfusion_flutter_charts
-      sha256: "5c22d394c4166ffe516b9d26a4b979ad49cd8c82a2d886b4dd1c63fed835b831"
-      url: "https://pub.dev"
-    source: hosted
-    version: "21.1.38"
   syncfusion_flutter_core:
     dependency: transitive
     description:
@@ -344,6 +328,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "21.1.38"
+  syncfusion_flutter_datagrid:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_datagrid
+      sha256: b5edd76644b6ec52f678051fb48885f4f6ec8caa40f1eade11d1702ae97e984f
+      url: "https://pub.dev"
+    source: hosted
+    version: "21.1.37"
   term_glyph:
     dependency: transitive
     description:
