@@ -66,19 +66,59 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                           count = 2;
                         });
                       },
-                      child: Container(
-                        width: double.maxFinite,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: ExpansionTile(
+                          iconColor: count == 2?primaryOrange:drawerItemColor,
+                          leading: Image.asset("images/people.png", color: count == 2?primaryOrange:drawerItemColor,),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     Row(
+                          //       children: [
+                          //         Image.asset("images/people.png",height: 18.h,width: 18.w, color: count == 2?primaryOrange:drawerItemColor,),
+                          //         SizedBox(width: 12.w,),
+                          //         Text("Customer", style: myStyleMontserrat(16.sp, count == 2?primaryOrange:drawerItemColor, FontWeight.w500),),
+                          //       ],
+                          //     ),
+                          //     //Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 2?primaryOrange:drawerItemColor,),
+                          //   ],
+                          // ),
+                          title: Text("Customer", style: myStyleMontserrat(16.sp, count == 2?primaryOrange:drawerItemColor, FontWeight.w500),),
                           children: [
-                            Row(
-                              children: [
-                                Image.asset("images/people.png",height: 18.h,width: 18.w, color: count == 2?primaryOrange:drawerItemColor,),
-                                SizedBox(width: 12.w,),
-                                Text("Customer", style: myStyleMontserrat(16.sp, count == 2?primaryOrange:drawerItemColor, FontWeight.w500),),
-                              ],
+                            GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  count = 7;
+                                });
+                              },
+                              child: Container(
+                                child: Row(
+                                  children: [
+                                    Image.asset("images/peoplelist.png",color: count == 7?primaryOrange:drawerItemColor,),
+                                    SizedBox(width: 12.w,),
+                                    Text("Customer List", style: myStyleMontserrat(14.sp, count == 7?primaryOrange:drawerItemColor, FontWeight.w500),),
+                                  ],
+                                ),
+                              ),
                             ),
-                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 2?primaryOrange:drawerItemColor,),
+                            SizedBox(height: 22.h,),
+                            GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  count = 8;
+                                });
+                              },
+                              child: Container(
+                                child: Row(
+                                  children: [
+                                    Image.asset("images/personfilladd.png",color: count == 8?primaryOrange:drawerItemColor,),
+                                    SizedBox(width: 12.w,),
+                                    Text("Add Customer", style: myStyleMontserrat(14.sp, count == 8?primaryOrange:drawerItemColor, FontWeight.w500),),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -107,21 +147,61 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                           count = 4;
                         });
                       },
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset("images/cash.png",height: 18.h,width: 18.w, color: count == 4?primaryOrange:drawerItemColor,),
-                                SizedBox(width: 12.w,),
-                                Text("My Commission", style: myStyleMontserrat(16.sp, count == 4?primaryOrange:drawerItemColor, FontWeight.w500),),
-                              ],
+                      child: ExpansionTile(
+                        iconColor: count == 4?primaryOrange:drawerItemColor,
+                        leading: Image.asset("images/cash.png",height: 18.h,width: 18.w, color: count == 4?primaryOrange:drawerItemColor,),
+                        title: Text("My Commission", style: myStyleMontserrat(16.sp, count == 4?primaryOrange:drawerItemColor, FontWeight.w500),),
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                count = 9;
+                              });
+                            },
+                            child: Container(
+                              child: Row(
+                                children: [
+                                  Image.asset("images/hourglass.png",color: count == 7?primaryOrange:drawerItemColor,),
+                                  SizedBox(width: 12.w,),
+                                  Text("Pending Commission", style: myStyleMontserrat(14.sp, count == 7?primaryOrange:drawerItemColor, FontWeight.w500),),
+                                ],
+                              ),
                             ),
-                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 4?primaryOrange:drawerItemColor,),
-                          ],
-                        ),
+                          ),
+                          SizedBox(height: 22.h,),
+                          GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                count = 10;
+                              });
+                            },
+                            child: Container(
+                              child: Row(
+                                children: [
+                                  Image.asset("images/clockhistory.png",height: 18.h,width: 18.w,color: count == 8?primaryOrange:drawerItemColor,),
+                                  SizedBox(width: 12.w,),
+                                  Text("Commission History", style: myStyleMontserrat(14.sp, count == 8?primaryOrange:drawerItemColor, FontWeight.w500),),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
+                      // Container(
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Row(
+                      //         children: [
+                      //           Image.asset("images/cash.png",height: 18.h,width: 18.w, color: count == 4?primaryOrange:drawerItemColor,),
+                      //           SizedBox(width: 12.w,),
+                      //           Text("My Commission", style: myStyleMontserrat(16.sp, count == 4?primaryOrange:drawerItemColor, FontWeight.w500),),
+                      //         ],
+                      //       ),
+                      //       Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 4?primaryOrange:drawerItemColor,),
+                      //     ],
+                      //   ),
+                      // ),
                     ),
                     SizedBox(height: 34.h,),
                     GestureDetector(
@@ -143,7 +223,9 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                     SizedBox(height: 34.h,),
                     GestureDetector(
                       onTap: (){
-                        count = 6;
+                        setState(() {
+                          count = 6;
+                        });
                       },
                       child: Container(
                         child: Row(
@@ -161,7 +243,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
             ),
           ],
         ),
-        
+
       ),
     );
   }
