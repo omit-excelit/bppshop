@@ -1,5 +1,6 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/style.dart';
+import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
 import 'package:bppshop/pages/customer_list_page.dart';
 import 'package:bppshop/pages/dashboard_page.dart';
 import 'package:bppshop/pages/login_page.dart';
@@ -113,6 +114,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                                 setState(() {
                                   count = 8;
                                 });
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddCustomerPage()));
                               },
                               child: Container(
                                 child: Row(

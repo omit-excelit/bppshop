@@ -23,3 +23,6 @@ final beguniColor = Color(0xff574B90);
 final secondaryRed = Color(0xffE15F41);
 final drawerHeaderColor = Color(0xff021728);
 final drawerItemColor = Color(0xff949494);
+final textfieldBorderColor = Color(0xffBDBDBD);
+final containerBorderColor = Color(0xffDFDFDF);
+final countColor = Color(0xffF8F8F8);
