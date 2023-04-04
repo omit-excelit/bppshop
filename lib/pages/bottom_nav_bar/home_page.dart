@@ -3,7 +3,6 @@ import 'package:bppshop/const/custom_button.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:bppshop/pages/customer_page.dart';
-import 'package:bppshop/pages/customer_profile_page.dart';
 import 'package:bppshop/pages/dashboard_page.dart';
 import 'package:bppshop/pages/my_commission.dart';
 import 'package:flutter/material.dart';
@@ -21,12 +20,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey();
     return Scaffold(
+      drawer: MyDrawerPage(),
+      key: _scaffoldkey,
       backgroundColor: bgColor,
       appBar: AppBar(
         backgroundColor: appBarColor,
         centerTitle: false,
         leading: InkWell(
-            onTap: (){},
+            onTap: (){
+              _scaffoldkey.currentState!.openDrawer();
+            },
             child: Icon(Icons.menu, size: 16.5.sp, color: secondaryWhite,)),
         title: Text("Home", style: myStyleMontserrat(18.sp, secondaryWhite, FontWeight.w400),),
       ),
