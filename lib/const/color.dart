@@ -21,3 +21,5 @@ final primaryGreen = Color(0xff43AF7E);
 final lightGreen = Color(0xff8FD57B);
 final beguniColor = Color(0xff574B90);
 final secondaryRed = Color(0xffE15F41);
+final drawerHeaderColor = Color(0xff021728);
+final drawerItemColor = Color(0xff949494);
