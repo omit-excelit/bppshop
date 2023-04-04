@@ -84,13 +84,16 @@ class _CustomerListPageState extends State<CustomerListPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    height: 36.h,
-                    width: 82.w,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(4.r), bottomLeft: Radius.circular(4.r)),
-                    border: Border.all(width: 1.w, color: containerBorderColor), color: primaryWhite),
-                    child: Text("Previous", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w400),),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 36.h,
+                      width: 82.w,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(4.r), bottomLeft: Radius.circular(4.r)),
+                      border: Border.all(width: 1.w, color: containerBorderColor), color: primaryWhite),
+                      child: Text("Previous", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w400),),
+                    ),
                   ),
                   Container(
                     alignment: Alignment.center,
@@ -99,13 +102,16 @@ class _CustomerListPageState extends State<CustomerListPage> {
                     color: primaryDeepBlue,
                     child: Text("1", style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 36.h,
-                    width: 57.w,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(4.r), bottomRight: Radius.circular(4.r)),
-                    border: Border.all(width: 1.w, color: containerBorderColor), color: primaryWhite),
-                    child: Text("Next", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w400),),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 36.h,
+                      width: 57.w,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(4.r), bottomRight: Radius.circular(4.r)),
+                      border: Border.all(width: 1.w, color: containerBorderColor), color: primaryWhite),
+                      child: Text("Next", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w400),),
+                    ),
                   ),
                 ],
               ),

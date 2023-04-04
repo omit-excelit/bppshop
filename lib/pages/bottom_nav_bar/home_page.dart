@@ -2,9 +2,11 @@ import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
+import 'package:bppshop/pages/bottom_nav_bar/order_history_page.dart';
 import 'package:bppshop/pages/customer_page.dart';
 import 'package:bppshop/pages/dashboard_page.dart';
 import 'package:bppshop/pages/my_commission.dart';
+import 'package:bppshop/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -66,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                   flex: 2,
                   child: CustomHomePageContainer(
                     onTap: (){
-
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OrderHistoryPage()));
                     },
                     title: "Order History",
                     image: "images/orderhistory.png",
@@ -88,7 +90,9 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 flex: 2,
                 child: CustomHomePageContainer(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WalletPage()));
+                  },
                   title: "Wallet",
                   image: "images/wallet.png",
                 ),

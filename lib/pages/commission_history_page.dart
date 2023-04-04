@@ -4,14 +4,14 @@ import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class OrderHistoryPage extends StatefulWidget {
-  const OrderHistoryPage({Key? key}) : super(key: key);
+class CommissionHistoryPage extends StatefulWidget {
+  const CommissionHistoryPage({Key? key}) : super(key: key);
 
   @override
-  State<OrderHistoryPage> createState() => _OrderHistoryPageState();
+  State<CommissionHistoryPage> createState() => _CommissionHistoryPageState();
 }
 
-class _OrderHistoryPageState extends State<OrderHistoryPage> {
+class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey();
   TextEditingController searchController = TextEditingController();
   @override
@@ -29,13 +29,17 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                 _scaffoldkey.currentState!.openDrawer();
               },
               child: Icon(Icons.menu, size: 16.5.sp, color: secondaryWhite,)),
-          title: Text("Order History", style: myStyleMontserrat(18.sp, secondaryWhite, FontWeight.w400),),
+          title: Text("My Commission", style: myStyleMontserrat(18.sp, secondaryWhite, FontWeight.w400),),
         ),
         body: Container(
           padding: EdgeInsets.all(12),
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text("Commission History", style: myStyleMontserrat(18.sp, homeItemColor, FontWeight.w500),)),
+                SizedBox(height: 18.h,),
                 TextFormField(
                   controller: searchController,
                   style: TextStyle(color: secondaryBlack),

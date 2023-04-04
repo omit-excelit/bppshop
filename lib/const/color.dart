@@ -26,3 +26,4 @@ final drawerItemColor = Color(0xff949494);
 final textfieldBorderColor = Color(0xffBDBDBD);
 final containerBorderColor = Color(0xffDFDFDF);
 final countColor = Color(0xffF8F8F8);
+final circleColor = Color(0xffDADCE0);

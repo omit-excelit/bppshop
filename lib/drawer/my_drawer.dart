@@ -1,9 +1,13 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
+import 'package:bppshop/pages/bottom_nav_bar/order_history_page.dart';
+import 'package:bppshop/pages/commission_history_page.dart';
 import 'package:bppshop/pages/customer_list_page.dart';
 import 'package:bppshop/pages/dashboard_page.dart';
 import 'package:bppshop/pages/login_page.dart';
+import 'package:bppshop/pages/pending_commission_page.dart';
+import 'package:bppshop/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -136,6 +140,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 3;
                         });
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OrderHistoryPage()));
                       },
                       child: Container(
                         child: Row(
@@ -164,6 +169,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                               setState(() {
                                 count = 9;
                               });
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PendingCommissionPage()));
                             },
                             child: Container(
                               child: Row(
@@ -181,6 +187,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                               setState(() {
                                 count = 10;
                               });
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CommissionHistoryPage()));
                             },
                             child: Container(
                               child: Row(
@@ -216,6 +223,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 5;
                         });
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WalletPage()));
                       },
                       child: Container(
                         child: Row(

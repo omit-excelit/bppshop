@@ -1,6 +1,8 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
 import 'package:bppshop/const/style.dart';
+import 'package:bppshop/pages/commission_history_page.dart';
+import 'package:bppshop/pages/pending_commission_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -34,7 +36,9 @@ class _MyCommissionPageState extends State<MyCommissionPage> {
               Expanded(
                 flex: 2,
                 child: CustomHomePageContainer(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PendingCommissionPage()));
+                  },
                   title: "Pending Commission",
                   image: "images/customerlist.png",
                 ),
@@ -44,6 +48,7 @@ class _MyCommissionPageState extends State<MyCommissionPage> {
                 flex: 2,
                 child: CustomHomePageContainer(
                   onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CommissionHistoryPage()));
                   },
                   title: "Commission History",
                   image: "images/commissionhistory.png",
