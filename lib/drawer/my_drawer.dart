@@ -58,11 +58,18 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                     GestureDetector(
                       onTap: (){},
                       child: Container(
+                        width: double.maxFinite,
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset("images/people.png",height: 18.h,width: 18.w,),
-                            SizedBox(width: 12.w,),
-                            Text("Customer", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                            Row(
+                              children: [
+                                Image.asset("images/people.png",height: 18.h,width: 18.w,),
+                                SizedBox(width: 12.w,),
+                                Text("Customer", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                              ],
+                            ),
+                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: drawerItemColor,),
                           ],
                         ),
                       ),
@@ -85,10 +92,16 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                       onTap: (){},
                       child: Container(
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset("images/cash.png",height: 18.h,width: 18.w,),
-                            SizedBox(width: 12.w,),
-                            Text("My Commission", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                            Row(
+                              children: [
+                                Image.asset("images/cash.png",height: 18.h,width: 18.w,),
+                                SizedBox(width: 12.w,),
+                                Text("My Commission", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                              ],
+                            ),
+                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: drawerItemColor,),
                           ],
                         ),
                       ),
