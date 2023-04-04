@@ -11,6 +11,7 @@ class MyDrawerPage extends StatefulWidget {
 }
 
 class _MyDrawerPageState extends State<MyDrawerPage> {
+  int count = 1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,20 +44,28 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                 child: Column(
                   children: [
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          count = 1;
+                        });
+                      },
                       child: Container(
                         child: Row(
                           children: [
-                            Image.asset("images/dash.png",height: 18.h,width: 18.w,),
+                            Image.asset("images/dash.png",height: 18.h,width: 18.w, color: count == 1?primaryOrange:drawerItemColor,),
                             SizedBox(width: 12.w,),
-                            Text("Dashboard", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                            Text("Dashboard", style: myStyleMontserrat(16.sp, count == 1?primaryOrange:drawerItemColor, FontWeight.w500),),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 34.h,),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          count = 2;
+                        });
+                      },
                       child: Container(
                         width: double.maxFinite,
                         child: Row(
@@ -64,70 +73,84 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                           children: [
                             Row(
                               children: [
-                                Image.asset("images/people.png",height: 18.h,width: 18.w,),
+                                Image.asset("images/people.png",height: 18.h,width: 18.w, color: count == 2?primaryOrange:drawerItemColor,),
                                 SizedBox(width: 12.w,),
-                                Text("Customer", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                                Text("Customer", style: myStyleMontserrat(16.sp, count == 2?primaryOrange:drawerItemColor, FontWeight.w500),),
                               ],
                             ),
-                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: drawerItemColor,),
+                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 2?primaryOrange:drawerItemColor,),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 34.h,),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          count = 3;
+                        });
+                      },
                       child: Container(
                         child: Row(
                           children: [
-                            Image.asset("images/clockhistory.png",height: 18.h,width: 18.w,),
+                            Image.asset("images/clockhistory.png",height: 18.h,width: 18.w,color: count == 3?primaryOrange:drawerItemColor,),
                             SizedBox(width: 12.w,),
-                            Text("Order History", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                            Text("Order History", style: myStyleMontserrat(16.sp, count == 3?primaryOrange:drawerItemColor, FontWeight.w500),),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 34.h,),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          count = 4;
+                        });
+                      },
                       child: Container(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
-                                Image.asset("images/cash.png",height: 18.h,width: 18.w,),
+                                Image.asset("images/cash.png",height: 18.h,width: 18.w, color: count == 4?primaryOrange:drawerItemColor,),
                                 SizedBox(width: 12.w,),
-                                Text("My Commission", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                                Text("My Commission", style: myStyleMontserrat(16.sp, count == 4?primaryOrange:drawerItemColor, FontWeight.w500),),
                               ],
                             ),
-                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: drawerItemColor,),
+                            Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 4?primaryOrange:drawerItemColor,),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 34.h,),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          count = 5;
+                        });
+                      },
                       child: Container(
                         child: Row(
                           children: [
-                            Image.asset("images/walletfill.png",height: 18.h,width: 18.w,),
+                            Image.asset("images/walletfill.png",height: 18.h,width: 18.w, color: count == 5?primaryOrange:drawerItemColor,),
                             SizedBox(width: 12.w,),
-                            Text("Wallet", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                            Text("Wallet", style: myStyleMontserrat(16.sp, count == 5?primaryOrange:drawerItemColor, FontWeight.w500),),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(height: 34.h,),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        count = 6;
+                      },
                       child: Container(
                         child: Row(
                           children: [
-                            Image.asset("images/logout.png",height: 18.h,width: 18.w,),
+                            Image.asset("images/logout.png",height: 18.h,width: 18.w, color: count == 6?primaryOrange:drawerItemColor,),
                             SizedBox(width: 12.w,),
-                            Text("Logout", style: myStyleMontserrat(16.sp, drawerItemColor, FontWeight.w500),),
+                            Text("Logout", style: myStyleMontserrat(16.sp, count == 6?primaryOrange:drawerItemColor, FontWeight.w500),),
                           ],
                         ),
                       ),
