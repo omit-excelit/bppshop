@@ -1,5 +1,8 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/style.dart';
+import 'package:bppshop/pages/customer_list_page.dart';
+import 'package:bppshop/pages/dashboard_page.dart';
+import 'package:bppshop/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -48,6 +51,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 1;
                         });
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DashboardPage()));
                       },
                       child: Container(
                         child: Row(
@@ -91,6 +95,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                                 setState(() {
                                   count = 7;
                                 });
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerListPage()));
                               },
                               child: Container(
                                 child: Row(
@@ -226,6 +231,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 6;
                         });
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
                       },
                       child: Container(
                         child: Row(
