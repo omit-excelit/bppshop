@@ -1,5 +1,6 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/style.dart';
+import 'package:bppshop/const/customer_table.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,16 +32,18 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
               child: Icon(Icons.menu, size: 16.5.sp, color: secondaryWhite,)),
           title: Text("My Commission", style: myStyleMontserrat(18.sp, secondaryWhite, FontWeight.w400),),
         ),
-        body: Container(
-          padding: EdgeInsets.all(12),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Align(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 12.w,top: 12.h,right: 12.w, bottom: 18.h),
+                child: Align(
                     alignment: Alignment.topLeft,
                     child: Text("Commission History", style: myStyleMontserrat(18.sp, homeItemColor, FontWeight.w500),)),
-                SizedBox(height: 18.h,),
-                TextFormField(
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 12.w,right: 12.w, bottom: 12.h),
+                child: TextFormField(
                   controller: searchController,
                   style: TextStyle(color: secondaryBlack),
                   decoration: InputDecoration(
@@ -58,8 +61,13 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
                         borderRadius: BorderRadius.circular(8.r)),
                   ),
                 ),
-                SizedBox(height: 12.h,),
-                Row(
+              ),
+
+              ReusableCustomerTablePage(),
+
+              Padding(
+                padding: EdgeInsets.only(left: 12.w,right: 12.w, bottom: 12.h, top: 12.h),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
@@ -84,7 +92,7 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
                       padding: EdgeInsets.symmetric(horizontal: 17.w),
                       height: 36.h,
                       color: primaryDeepBlue,
-                      child: Text("$count", style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
+                      child: Text(count.toString(), style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
                     ),
                     GestureDetector(
                       onTap: (){
@@ -103,8 +111,8 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
