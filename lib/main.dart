@@ -1,3 +1,4 @@
+import 'package:bppshop/const/test_table.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
 
-          home: SigninPage(),
+          home: ReusableTablePage(),
         );
       },
     );

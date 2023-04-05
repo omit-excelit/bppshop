@@ -26,6 +26,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
       child: Drawer(
         width: 233.w,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               padding: EdgeInsets.all(12),
@@ -47,9 +48,10 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(15.w, 18.h, 17.w, 12.h),
+              //padding: EdgeInsets.fromLTRB(15.w, 18.h, 17.w, 12.h),
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     GestureDetector(
                       onTap: (){
@@ -59,6 +61,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DashboardPage()));
                       },
                       child: Container(
+                        margin: EdgeInsets.only(left: 18.w, top: 18.h),
                         child: Row(
                           children: [
                             Image.asset("images/dash.png",height: 18.h,width: 18.w, color: count == 1?primaryOrange:drawerItemColor,),
@@ -68,7 +71,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 34.h,),
+                    SizedBox(height: 18.h,),
                     GestureDetector(
                       onTap: (){
                         setState(() {
@@ -77,64 +80,59 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
-                        child: ExpansionTile(
-                          iconColor: count == 2?primaryOrange:drawerItemColor,
-                          leading: Image.asset("images/people.png", color: count == 2?primaryOrange:drawerItemColor,),
-                          // Row(
-                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //   children: [
-                          //     Row(
-                          //       children: [
-                          //         Image.asset("images/people.png",height: 18.h,width: 18.w, color: count == 2?primaryOrange:drawerItemColor,),
-                          //         SizedBox(width: 12.w,),
-                          //         Text("Customer", style: myStyleMontserrat(16.sp, count == 2?primaryOrange:drawerItemColor, FontWeight.w500),),
-                          //       ],
-                          //     ),
-                          //     //Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 2?primaryOrange:drawerItemColor,),
-                          //   ],
-                          // ),
-                          title: Text("Customer", style: myStyleMontserrat(16.sp, count == 2?primaryOrange:drawerItemColor, FontWeight.w500),),
-                          children: [
-                            GestureDetector(
-                              onTap: (){
-                                setState(() {
-                                  count = 7;
-                                });
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerListPage()));
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Image.asset("images/peoplelist.png",color: count == 7?primaryOrange:drawerItemColor,),
-                                    SizedBox(width: 12.w,),
-                                    Text("Customer List", style: myStyleMontserrat(14.sp, count == 7?primaryOrange:drawerItemColor, FontWeight.w500),),
-                                  ],
+                        child: Container(
+                          child: ExpansionTile(
+                            iconColor: count == 2?primaryOrange:drawerItemColor,
+                            title: Row(
+                              children: [
+                                Image.asset("images/people.png", height: 15.h,width: 20.w, color: count == 2?primaryOrange:drawerItemColor,),
+                                SizedBox(width: 12.w,),
+                                Text("Customer", style: myStyleMontserrat(16.sp, count == 2?primaryOrange:drawerItemColor, FontWeight.w500),),
+                              ],
+                            ),
+                            children: [
+                              GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    count = 7;
+                                  });
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerListPage()));
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.only(left: 40.w),
+                                  child: Row(
+                                    children: [
+                                      Image.asset("images/peoplelist.png", height: 13.5.h,width: 18.w, color: count == 7?primaryOrange:drawerItemColor,),
+                                      SizedBox(width: 12.w,),
+                                      Text("Customer List", style: myStyleMontserrat(14.sp, count == 7?primaryOrange:drawerItemColor, FontWeight.w500),),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(height: 22.h,),
-                            GestureDetector(
-                              onTap: (){
-                                setState(() {
-                                  count = 8;
-                                });
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddCustomerPage()));
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Image.asset("images/personfilladd.png",color: count == 8?primaryOrange:drawerItemColor,),
-                                    SizedBox(width: 12.w,),
-                                    Text("Add Customer", style: myStyleMontserrat(14.sp, count == 8?primaryOrange:drawerItemColor, FontWeight.w500),),
-                                  ],
+                              SizedBox(height: 22.h,),
+                              GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    count = 8;
+                                  });
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddCustomerPage()));
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.only(left: 40.w, bottom: 10.h),
+                                  child: Row(
+                                    children: [
+                                      Image.asset("images/personfilladd.png", height: 18.h,width: 18.w, color: count == 8?primaryOrange:drawerItemColor,),
+                                      SizedBox(width: 12.w,),
+                                      Text("Add Customer", style: myStyleMontserrat(14.sp, count == 8?primaryOrange:drawerItemColor, FontWeight.w500),),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 34.h,),
                     GestureDetector(
                       onTap: (){
                         setState(() {
@@ -143,16 +141,17 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OrderHistoryPage()));
                       },
                       child: Container(
+                        margin: EdgeInsets.only(left: 15.w, top: 18.h),
                         child: Row(
                           children: [
-                            Image.asset("images/clockhistory.png",height: 18.h,width: 18.w,color: count == 3?primaryOrange:drawerItemColor,),
+                            Image.asset("images/clockhistory.png",height: 20.h,width: 20.w,color: count == 3?primaryOrange:drawerItemColor,),
                             SizedBox(width: 12.w,),
                             Text("Order History", style: myStyleMontserrat(16.sp, count == 3?primaryOrange:drawerItemColor, FontWeight.w500),),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 34.h,),
+                    SizedBox(height: 18.h,),
                     GestureDetector(
                       onTap: (){
                         setState(() {
@@ -161,8 +160,13 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                       },
                       child: ExpansionTile(
                         iconColor: count == 4?primaryOrange:drawerItemColor,
-                        leading: Image.asset("images/cash.png",height: 18.h,width: 18.w, color: count == 4?primaryOrange:drawerItemColor,),
-                        title: Text("My Commission", style: myStyleMontserrat(16.sp, count == 4?primaryOrange:drawerItemColor, FontWeight.w500),),
+                        title: Row(
+                          children: [
+                            Image.asset("images/cash.png",height: 14.h,width: 20.w, color: count == 4?primaryOrange:drawerItemColor,),
+                            SizedBox(width: 12.h,),
+                            Text("My Commission", style: myStyleMontserrat(16.sp, count == 4?primaryOrange:drawerItemColor, FontWeight.w500),),
+                          ],
+                        ),
                         children: [
                           GestureDetector(
                             onTap: (){
@@ -172,16 +176,16 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PendingCommissionPage()));
                             },
                             child: Container(
+                              padding: EdgeInsets.only(left: 40.w),
                               child: Row(
                                 children: [
-                                  Image.asset("images/hourglass.png",color: count == 7?primaryOrange:drawerItemColor,),
+                                  Image.asset("images/hourglass.png", height: 15.75.h,width: 13.5.w,color: count == 7?primaryOrange:drawerItemColor,),
                                   SizedBox(width: 12.w,),
                                   Text("Pending Commission", style: myStyleMontserrat(14.sp, count == 7?primaryOrange:drawerItemColor, FontWeight.w500),),
                                 ],
                               ),
                             ),
                           ),
-                          SizedBox(height: 22.h,),
                           GestureDetector(
                             onTap: (){
                               setState(() {
@@ -190,9 +194,11 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CommissionHistoryPage()));
                             },
                             child: Container(
+                              margin: EdgeInsets.only(top: 22.h, bottom: 10.h),
+                              padding: EdgeInsets.only(left: 40.w),
                               child: Row(
                                 children: [
-                                  Image.asset("images/clockhistory.png",height: 18.h,width: 18.w,color: count == 8?primaryOrange:drawerItemColor,),
+                                  Image.asset("images/clockhistory.png",height: 15.h,width: 15.w,color: count == 8?primaryOrange:drawerItemColor,),
                                   SizedBox(width: 12.w,),
                                   Text("Commission History", style: myStyleMontserrat(14.sp, count == 8?primaryOrange:drawerItemColor, FontWeight.w500),),
                                 ],
@@ -201,23 +207,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                           ),
                         ],
                       ),
-                      // Container(
-                      //   child: Row(
-                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //     children: [
-                      //       Row(
-                      //         children: [
-                      //           Image.asset("images/cash.png",height: 18.h,width: 18.w, color: count == 4?primaryOrange:drawerItemColor,),
-                      //           SizedBox(width: 12.w,),
-                      //           Text("My Commission", style: myStyleMontserrat(16.sp, count == 4?primaryOrange:drawerItemColor, FontWeight.w500),),
-                      //         ],
-                      //       ),
-                      //       Icon(Icons.arrow_drop_down_outlined, size: 25, color: count == 4?primaryOrange:drawerItemColor,),
-                      //     ],
-                      //   ),
-                      // ),
                     ),
-                    SizedBox(height: 34.h,),
                     GestureDetector(
                       onTap: (){
                         setState(() {
@@ -226,16 +216,16 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WalletPage()));
                       },
                       child: Container(
+                        margin: EdgeInsets.only(left: 15.w, top: 18.h),
                         child: Row(
                           children: [
-                            Image.asset("images/walletfill.png",height: 18.h,width: 18.w, color: count == 5?primaryOrange:drawerItemColor,),
+                            Image.asset("images/walletfill.png",height: 24.h,width: 24.w, color: count == 5?primaryOrange:drawerItemColor,),
                             SizedBox(width: 12.w,),
                             Text("Wallet", style: myStyleMontserrat(16.sp, count == 5?primaryOrange:drawerItemColor, FontWeight.w500),),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 34.h,),
                     GestureDetector(
                       onTap: (){
                         setState(() {
@@ -244,9 +234,10 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
                       },
                       child: Container(
+                        margin: EdgeInsets.only(left: 16.w, top: 34.h),
                         child: Row(
                           children: [
-                            Image.asset("images/logout.png",height: 18.h,width: 18.w, color: count == 6?primaryOrange:drawerItemColor,),
+                            Image.asset("images/logout.png",height: 20.h,width: 20.w, color: count == 6?primaryOrange:drawerItemColor,),
                             SizedBox(width: 12.w,),
                             Text("Logout", style: myStyleMontserrat(16.sp, count == 6?primaryOrange:drawerItemColor, FontWeight.w500),),
                           ],

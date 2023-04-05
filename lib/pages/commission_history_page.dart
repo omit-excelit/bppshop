@@ -63,7 +63,13 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          if(count>1){
+                            count --;
+                          }
+                        });
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         height: 36.h,
@@ -78,10 +84,14 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
                       padding: EdgeInsets.symmetric(horizontal: 17.w),
                       height: 36.h,
                       color: primaryDeepBlue,
-                      child: Text("1", style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
+                      child: Text("$count", style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
                     ),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          count ++;
+                        });
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         height: 36.h,
@@ -100,4 +110,5 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
       ),
     );
   }
+  int count = 1;
 }

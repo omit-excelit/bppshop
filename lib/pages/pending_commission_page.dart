@@ -7,8 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class PendingCommissionPage extends StatefulWidget {
-  PendingCommissionPage({Key? key, this.tableData}) : super(key: key);
-  final TableData? tableData;
+  PendingCommissionPage({Key? key}) : super(key: key);
 
   @override
   State<PendingCommissionPage> createState() => _PendingCommissionPageState();
@@ -17,40 +16,6 @@ class PendingCommissionPage extends StatefulWidget {
 class _PendingCommissionPageState extends State<PendingCommissionPage> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey();
   TextEditingController searchController = TextEditingController();
-
-  // class TableData {
-  // final String customerID;
-  // final String orderID;
-  // final String totalProducts;
-  // final String totalAmount;
-  // TableData(this.customerID, this.orderID, this.totalProducts, this.totalAmount);
-  // }
-
-  // late EmployeeDataSource _employeeDataSource;
-  //
-  // List<Employee> _employees = <Employee>[];
-  //
-  // @override
-  // void initState() {
-  // super.initState();
-  // _employees = getEmployeeData();
-  // _employeeDataSource = EmployeeDataSource(employees: _employees);
-  // }
-
-  // List<TableData> getTableData(){
-  // return [
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626"),
-  // TableData("#100470", "#100470", "2568848150", "৳252668123626")
-  // ];
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -97,54 +62,20 @@ class _PendingCommissionPageState extends State<PendingCommissionPage> {
                   ),
                 ),
                 SizedBox(height: 12.h,),
-                // SfDataGrid(
-                //   source: ,
-                //   columns: [
-                //     GridColumn(
-                //         columnName: 'id',
-                //         label: Container(
-                //             padding: EdgeInsets.symmetric(horizontal: 16.0),
-                //             alignment: Alignment.centerRight,
-                //             child: Text(
-                //               'ID',
-                //               overflow: TextOverflow.ellipsis,
-                //             ))),
-                //     GridColumn(
-                //         columnName: 'name',
-                //         label: Container(
-                //             padding: EdgeInsets.symmetric(horizontal: 16.0),
-                //             alignment: Alignment.centerLeft,
-                //             child: Text(
-                //               'Name',
-                //               overflow: TextOverflow.ellipsis,
-                //             ))),
-                //     GridColumn(
-                //         columnName: 'designation',
-                //         label: Container(
-                //             padding: EdgeInsets.symmetric(horizontal: 16.0),
-                //             alignment: Alignment.centerLeft,
-                //             child: Text(
-                //               'Designation',
-                //               overflow: TextOverflow.ellipsis,
-                //             ))),
-                //     GridColumn(
-                //         columnName: 'salary',
-                //         label: Container(
-                //             padding: EdgeInsets.symmetric(horizontal: 16.0),
-                //             alignment: Alignment.centerRight,
-                //             child: Text(
-                //               'Salary',
-                //               overflow: TextOverflow.ellipsis,
-                //             ))),
-                //   ],
-                // ),
+
 
                 SizedBox(height: 12.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          if(count>1){
+                            count --;
+                          }
+                        });
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         height: 36.h,
@@ -159,10 +90,14 @@ class _PendingCommissionPageState extends State<PendingCommissionPage> {
                       padding: EdgeInsets.symmetric(horizontal: 17.w),
                       height: 36.h,
                       color: primaryDeepBlue,
-                      child: Text("1", style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
+                      child: Text(count.toString(), style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
                     ),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          count ++;
+                        });
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         height: 36.h,
@@ -181,4 +116,5 @@ class _PendingCommissionPageState extends State<PendingCommissionPage> {
       ),
     );
   }
+  int count = 1;
 }

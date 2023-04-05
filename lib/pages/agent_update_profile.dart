@@ -47,6 +47,7 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                 child: Column(
                   children: [
                     Stack(
+                      //clipBehavior: Clip,
                       children: [
                         Container(
                           height: 116.h,
@@ -55,19 +56,21 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                               color: primaryOrange),
                         ),
                         Positioned(
-                          bottom: -28,
+                          bottom: -20.h,
                             left: 0,
                             right: 0,
-                            child: Container(
+                            child: GestureDetector(
+                              onTap: (){},
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                          padding: EdgeInsets.only(top: 8.h),
                           height: 61.h,
                           width: 74.w,
                           decoration: BoxDecoration(shape: BoxShape.circle,
                           color: primaryBlue),
-                        )),Positioned(
-                          bottom: -45,
-                            left: 0,
-                            right: 0,
-                            child: Image.asset("images/edit.png"),),
+                                child: Image.asset("images/edit.png" , height: 24.h, width: 24.w,),
+                        ),
+                            )),
                       ],
                     ),
 
