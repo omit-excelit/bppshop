@@ -101,7 +101,13 @@ class _WalletPageState extends State<WalletPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       GestureDetector(
-                        onTap: (){},
+                        onTap: (){
+                          setState(() {
+                            if(count>1){
+                              count --;
+                            }
+                          });
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           height: 36.h,
@@ -116,10 +122,14 @@ class _WalletPageState extends State<WalletPage> {
                         padding: EdgeInsets.symmetric(horizontal: 17.w),
                         height: 36.h,
                         color: primaryDeepBlue,
-                        child: Text("1", style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
+                        child: Text(count.toString(), style: myStyleMontserrat(14.sp, countColor, FontWeight.w600),),
                       ),
                       GestureDetector(
-                        onTap: (){},
+                        onTap: (){
+                          setState(() {
+                            count ++;
+                          });
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           height: 36.h,
@@ -139,4 +149,5 @@ class _WalletPageState extends State<WalletPage> {
       ),
     );
   }
+  int count = 1;
 }

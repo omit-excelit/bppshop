@@ -32,6 +32,7 @@ class _SigninPageState extends State<SigninPage> {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 20.h, bottom: 6.h),
