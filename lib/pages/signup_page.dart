@@ -25,7 +25,10 @@ class _SignUpPageState extends State<SignUpPage> {
   final districtItems = ["Dhaka", "Bogura", "Rangpur"];
   final thanaItems = ["Mirpur", "Nandigram", "Kaonia"];
   final areaItems = ["Shewrapara", "Nagorkandi", "Kaonia"];
-  String ?_selectedLocation;
+  String ?_selectedDistrict;
+  String ?_selectedThana;
+  String ?_selectedArea;
+
 
   @override
   Widget build(BuildContext context) {
@@ -144,25 +147,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             SizedBox(height: 10.h,),
                             Text("Select District",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
-                            // TextFormField(
-                            //   controller: districtController,
-                            //   style: TextStyle(color: secondaryBlack),
-                            //   decoration: InputDecoration(
-                            //     suffixIcon: Icon(
-                            //       Icons.arrow_drop_down_sharp,
-                            //       color: secondaryBlack,
-                            //       size: 26.sp,
-                            //     ),
-                            //     contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                            //     hintText: "Select District",
-                            //     hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                            //     filled: true,
-                            //     fillColor: textFieldColor,
-                            //     border: OutlineInputBorder(
-                            //         borderSide: BorderSide.none,
-                            //         borderRadius: BorderRadius.circular(8.r)),
-                            //   ),
-                            // ),
                             Container(
                               padding: EdgeInsets.symmetric(horizontal: 12.w,),
                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
@@ -171,13 +155,12 @@ class _SignUpPageState extends State<SignUpPage> {
                                 child: DropdownButton(
                                   iconDisabledColor: secondaryBlack,
                                   iconEnabledColor: secondaryBlack,
-                                  underline: null,
                                   isExpanded: true,
                                   hint: Text('Select District',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
-                                  value: _selectedLocation,
+                                  value: _selectedDistrict,
                                   onChanged: (newValue) {
                                     setState(() {
-                                      _selectedLocation = newValue!;
+                                      _selectedDistrict = newValue!;
                                     });
                                   },
                                   items: districtItems.map((districtItems) {
@@ -189,48 +172,60 @@ class _SignUpPageState extends State<SignUpPage> {
                                 ),
                               ),
                             ),
-
                             SizedBox(height: 10.h,),
                             Text("Select Thana",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
-                            TextFormField(
-                              controller: thanaController,
-                              style: TextStyle(color: secondaryBlack),
-                              decoration: InputDecoration(
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down_sharp,
-                                  color: secondaryBlack,
-                                  size: 26.sp,
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 12.w,),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
+                                  color: textFieldColor),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  iconDisabledColor: secondaryBlack,
+                                  iconEnabledColor: secondaryBlack,
+                                  isExpanded: true,
+                                  hint: Text('Select Thana',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
+                                  value: _selectedThana,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      _selectedThana = newValue!;
+                                    });
+                                  },
+                                  items: thanaItems.map((thanaItems) {
+                                    return DropdownMenuItem(
+                                      child: Text(thanaItems, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                      value: thanaItems,
+                                    );
+                                  }).toList(),
                                 ),
-                                contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                                hintText: "Select Thana",
-                                hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                                filled: true,
-                                fillColor: textFieldColor,
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(8.r)),
                               ),
-                            ),SizedBox(height: 10.h,),
-                            Text("Select Thana",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
+                            ),
+                            SizedBox(height: 10.h,),
+                            Text("Select Area",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
-                            TextFormField(
-                              controller: areaController,
-                              style: TextStyle(color: secondaryBlack),
-                              decoration: InputDecoration(
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down_sharp,
-                                  color: secondaryBlack,
-                                  size: 26.sp,
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 12.w,),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
+                                  color: textFieldColor),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  iconDisabledColor: secondaryBlack,
+                                  iconEnabledColor: secondaryBlack,
+                                  isExpanded: true,
+                                  hint: Text('Select Thana',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
+                                  value: _selectedArea,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      _selectedArea = newValue!;
+                                    });
+                                  },
+                                  items: areaItems.map((areaItems) {
+                                    return DropdownMenuItem(
+                                      child: Text(areaItems, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                      value: areaItems,
+                                    );
+                                  }).toList(),
                                 ),
-                                contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                                hintText: "Select Area",
-                                hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                                filled: true,
-                                fillColor: textFieldColor,
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(8.r)),
                               ),
                             ),
                           ],
