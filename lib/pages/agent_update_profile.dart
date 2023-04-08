@@ -19,6 +19,14 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
   TextEditingController districtController = TextEditingController();
   TextEditingController thanaController = TextEditingController();
   TextEditingController areaController = TextEditingController();
+
+  final districtItems = ["Dhaka", "Bogura", "Rangpur"];
+  final thanaItems = ["Mirpur", "Nandigram", "Kaonia"];
+  final areaItems = ["Shewrapara", "Nagorkandi", "Kaonia"];
+  String ?_selectedDistrict;
+  String ?_selectedThana;
+  String ?_selectedArea;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +48,7 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
               Container(
                 padding: EdgeInsets.all(12),
                 width: double.infinity,
@@ -47,30 +56,39 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                 child: Column(
                   children: [
                     Stack(
-                      //clipBehavior: Clip,
+                      clipBehavior: Clip.none,
                       children: [
+                        Positioned(
+                            top: 70,
+                            left: 70,
+                            child: CircleAvatar(
+                              radius: 50,
+                              backgroundColor: Colors.blue,
+                            )),
                         Container(
                           height: 116.h,
                           width: 116.w,
                           decoration: BoxDecoration(shape: BoxShape.circle,
                               color: primaryOrange),
                         ),
-                        Positioned(
-                          bottom: -20.h,
-                            left: 0,
-                            right: 0,
-                            child: GestureDetector(
-                              onTap: (){},
-                              child: Container(
-                                alignment: Alignment.topCenter,
-                          padding: EdgeInsets.only(top: 8.h),
-                          height: 61.h,
-                          width: 74.w,
-                          decoration: BoxDecoration(shape: BoxShape.circle,
-                          color: primaryBlue),
-                                child: Image.asset("images/edit.png" , height: 24.h, width: 24.w,),
-                        ),
-                            )),
+                        // Positioned(
+                        //   bottom: -20.h,
+                        //     left: 0,
+                        //     right: 0,
+                        //     child: GestureDetector(
+                        //       onTap: (){},
+                        //       child: Container(
+                        //         alignment: Alignment.topCenter,
+                        //   padding: EdgeInsets.only(top: 8.h),
+                        //   height: 61.h,
+                        //   width: 74.w,
+                        //   decoration: BoxDecoration(shape: BoxShape.circle,
+                        //   color: primaryBlue),
+                        //         child: Image.asset("images/edit.png" , height: 24.h, width: 24.w,),
+                        // ),
+                        //     )),
+
+
                       ],
                     ),
 
@@ -133,65 +151,83 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                           SizedBox(height: 10.h,),
                           Text("Agent District",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
-                          TextFormField(
-                            controller: districtController,
-                            style: TextStyle(color: secondaryBlack),
-                            decoration: InputDecoration(
-                              suffixIcon: Icon(
-                                Icons.arrow_drop_down_sharp,
-                                color: secondaryBlack,
-                                size: 26.sp,
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12.w,),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
+                                color: textFieldColor),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                iconDisabledColor: secondaryBlack,
+                                iconEnabledColor: secondaryBlack,
+                                isExpanded: true,
+                                hint: Text('Select',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
+                                value: _selectedDistrict,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    _selectedDistrict = newValue!;
+                                  });
+                                },
+                                items: districtItems.map((districtItems) {
+                                  return DropdownMenuItem(
+                                    child: Text(districtItems, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                    value: districtItems,
+                                  );
+                                }).toList(),
                               ),
-                              contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                              hintText: "Select",
-                              hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                              filled: true,
-                              fillColor: textFieldColor,
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.circular(8.r)),
                             ),
                           ),SizedBox(height: 10.h,),
                           Text("Agent Thana",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
-                          TextFormField(
-                            controller: thanaController,
-                            style: TextStyle(color: secondaryBlack),
-                            decoration: InputDecoration(
-                              suffixIcon: Icon(
-                                Icons.arrow_drop_down_sharp,
-                                color: secondaryBlack,
-                                size: 26.sp,
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12.w,),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
+                                color: textFieldColor),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                iconDisabledColor: secondaryBlack,
+                                iconEnabledColor: secondaryBlack,
+                                isExpanded: true,
+                                hint: Text('Select',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
+                                value: _selectedThana,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    _selectedThana = newValue!;
+                                  });
+                                },
+                                items: thanaItems.map((thanaItems) {
+                                  return DropdownMenuItem(
+                                    child: Text(thanaItems, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                    value: thanaItems,
+                                  );
+                                }).toList(),
                               ),
-                              contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                              hintText: "Select",
-                              hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                              filled: true,
-                              fillColor: textFieldColor,
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.circular(8.r)),
                             ),
                           ),SizedBox(height: 10.h,),
                           Text("Agent Area",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
-                          TextFormField(
-                            controller: areaController,
-                            style: TextStyle(color: secondaryBlack),
-                            decoration: InputDecoration(
-                              suffixIcon: Icon(
-                                Icons.arrow_drop_down_sharp,
-                                color: secondaryBlack,
-                                size: 26.sp,
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12.w,),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
+                                color: textFieldColor),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                iconDisabledColor: secondaryBlack,
+                                iconEnabledColor: secondaryBlack,
+                                isExpanded: true,
+                                hint: Text('Select',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
+                                value: _selectedArea,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    _selectedArea = newValue!;
+                                  });
+                                },
+                                items: areaItems.map((areaItems) {
+                                  return DropdownMenuItem(
+                                    child: Text(areaItems, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                    value: areaItems,
+                                  );
+                                }).toList(),
                               ),
-                              contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                              hintText: "Select",
-                              hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                              filled: true,
-                              fillColor: textFieldColor,
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.circular(8.r)),
                             ),
                           ),
                           SizedBox(height: 10.h,),

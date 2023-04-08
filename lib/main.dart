@@ -1,4 +1,5 @@
 import 'package:bppshop/const/customer_table.dart';
+import 'package:bppshop/pages/agent_update_profile.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
 
-          home: SigninPage(),
+          home: AgentUpdateProfile(),
         );
       },
     );
