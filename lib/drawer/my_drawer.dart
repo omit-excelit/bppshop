@@ -250,7 +250,6 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
             ),
           ],
         ),
-
       ),
     );
   }
