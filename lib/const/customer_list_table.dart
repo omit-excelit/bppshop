@@ -97,20 +97,19 @@ class _CustomerListTableState extends State<CustomerListTable> {
 
   List<CustomerList> getCustomerListData() {
     return [
-      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\n New Eskaton Garden Road", "৳252668123626"),
+      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road"),
     ];
   }
 }
 
 class CustomerList {
-  CustomerList(this.customerID, this.customerName, this.customerEmail, this.mobileNumber, this.customerAddress, this.action);
+  CustomerList(this.customerID, this.customerName, this.customerEmail, this.mobileNumber, this.customerAddress);
 
   final String customerID;
   final String customerName;
   final String customerEmail;
   final String mobileNumber;
   final String customerAddress;
-  final String action;
 }
 
 class CustomerListTableDataSource extends DataGridSource {
@@ -122,7 +121,7 @@ class CustomerListTableDataSource extends DataGridSource {
       DataGridCell<String>(columnName: 'customerEmail', value: e.customerEmail),
       DataGridCell<String>(columnName: 'mobileNumber', value: e.mobileNumber),
       DataGridCell<String>(columnName: 'customerAddress', value: e.customerAddress),
-      DataGridCell<String>(columnName: 'action', value: e.action),
+      //DataGridCell<String>(columnName: 'action', value: e.action),
     ]))
         .toList();
   }
