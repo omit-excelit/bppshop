@@ -22,6 +22,11 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController areaController = TextEditingController();
   bool _obscureText = true;
 
+  final districtItems = ["Dhaka", "Bogura", "Rangpur"];
+  final thanaItems = ["Mirpur", "Nandigram", "Kaonia"];
+  final areaItems = ["Shewrapara", "Nagorkandi", "Kaonia"];
+  String ?_selectedLocation;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -139,25 +144,53 @@ class _SignUpPageState extends State<SignUpPage> {
                             SizedBox(height: 10.h,),
                             Text("Select District",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
-                            TextFormField(
-                              controller: districtController,
-                              style: TextStyle(color: secondaryBlack),
-                              decoration: InputDecoration(
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down_sharp,
-                                  color: secondaryBlack,
-                                  size: 26.sp,
+                            // TextFormField(
+                            //   controller: districtController,
+                            //   style: TextStyle(color: secondaryBlack),
+                            //   decoration: InputDecoration(
+                            //     suffixIcon: Icon(
+                            //       Icons.arrow_drop_down_sharp,
+                            //       color: secondaryBlack,
+                            //       size: 26.sp,
+                            //     ),
+                            //     contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
+                            //     hintText: "Select District",
+                            //     hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
+                            //     filled: true,
+                            //     fillColor: textFieldColor,
+                            //     border: OutlineInputBorder(
+                            //         borderSide: BorderSide.none,
+                            //         borderRadius: BorderRadius.circular(8.r)),
+                            //   ),
+                            // ),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 12.w,),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),
+                              color: textFieldColor),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  iconDisabledColor: secondaryBlack,
+                                  iconEnabledColor: secondaryBlack,
+                                  underline: null,
+                                  isExpanded: true,
+                                  hint: Text('Select District',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
+                                  value: _selectedLocation,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      _selectedLocation = newValue!;
+                                    });
+                                  },
+                                  items: districtItems.map((districtItems) {
+                                    return DropdownMenuItem(
+                                      child: Text(districtItems, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                      value: districtItems,
+                                    );
+                                  }).toList(),
                                 ),
-                                contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                                hintText: "Select District",
-                                hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                                filled: true,
-                                fillColor: textFieldColor,
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(8.r)),
                               ),
-                            ),SizedBox(height: 10.h,),
+                            ),
+
+                            SizedBox(height: 10.h,),
                             Text("Select Thana",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(

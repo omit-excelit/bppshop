@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^4.0.3
   flutter_screenutil: ^5.7.0
   syncfusion_flutter_datagrid: ^21.1.37
+  provider: ^6.0.5
 
 
 dev_dependencies:
