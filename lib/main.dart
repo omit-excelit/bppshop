@@ -11,6 +11,8 @@ void main() {
   runApp(const MyApp());
 }
 
+//check git credential
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
