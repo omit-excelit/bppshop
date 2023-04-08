@@ -1,4 +1,5 @@
 import 'package:bppshop/const/color.dart';
+import 'package:bppshop/const/customer_list_table.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
@@ -31,12 +32,12 @@ class _CustomerListPageState extends State<CustomerListPage> {
             child: Icon(Icons.menu, size: 16.5.sp, color: secondaryWhite,)),
         title: Text("Customer", style: myStyleMontserrat(18.sp, secondaryWhite, FontWeight.w400),),
       ),
-      body: Container(
-        padding: EdgeInsets.all(12),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 12.w,right: 12.w,top: 12.h,bottom: 12.h),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Customer List", style: myStyleMontserrat(18.sp, homeItemColor, FontWeight.w500),),
@@ -61,8 +62,10 @@ class _CustomerListPageState extends State<CustomerListPage> {
                   )
                 ],
               ),
-              SizedBox(height: 12.h,),
-              TextFormField(
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 12.w,right: 12.w,bottom: 12.h),
+              child: TextFormField(
                 controller: searchController,
                 style: TextStyle(color: secondaryBlack),
                 decoration: InputDecoration(
@@ -80,8 +83,11 @@ class _CustomerListPageState extends State<CustomerListPage> {
                       borderRadius: BorderRadius.circular(8.r)),
                 ),
               ),
-              SizedBox(height: 12.h,),
-              Row(
+            ),
+            CustomerListTable(),
+            Padding(
+              padding: EdgeInsets.only(left: 12.w,right: 12.w,top: 12.h,bottom: 12.h),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
@@ -115,8 +121,8 @@ class _CustomerListPageState extends State<CustomerListPage> {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
