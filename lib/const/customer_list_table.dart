@@ -83,7 +83,7 @@ class _CustomerListTableState extends State<CustomerListTable> {
                   style: myStyleMontserrat(12.sp, countColor, FontWeight.w600),))),
         GridColumn(
             columnWidthMode: ColumnWidthMode.auto,
-            maximumWidth: 102.w,
+            minimumWidth: 96.w,
             columnName: 'action',
             label: Container(
                 color: primaryDeepBlue,
@@ -97,7 +97,12 @@ class _CustomerListTableState extends State<CustomerListTable> {
 
   List<CustomerList> getCustomerListData() {
     return [
-      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road", widget),
+      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road", ""),
+      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road", ""),
+      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road", ""),
+      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road", ""),
+      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road", ""),
+      CustomerList("#100470", "MD. Ahosan Habib", "example@gmail.com", "01626658415", "16/1 (9th Floor), Alhaz Shamsuddin Mansion,\nNew Eskaton Garden Road", ""),
     ];
   }
 }
@@ -110,7 +115,7 @@ class CustomerList {
   final String customerEmail;
   final String mobileNumber;
   final String customerAddress;
-  final Widget action;
+  final String action;
 }
 
 class CustomerListTableDataSource extends DataGridSource {
@@ -122,7 +127,7 @@ class CustomerListTableDataSource extends DataGridSource {
       DataGridCell<String>(columnName: 'customerEmail', value: e.customerEmail),
       DataGridCell<String>(columnName: 'mobileNumber', value: e.mobileNumber),
       DataGridCell<String>(columnName: 'customerAddress', value: e.customerAddress),
-      DataGridCell<Widget>(columnName: 'action', value: e.action)
+      DataGridCell<String>(columnName: 'action', value: e.action),
     ]))
         .toList();
   }
@@ -135,13 +140,40 @@ class CustomerListTableDataSource extends DataGridSource {
   DataGridRowAdapter buildRow(DataGridRow row) {
     return DataGridRowAdapter(
         cells: row.getCells().map<Widget>((e) {
-          return Container(
+          return e.columnName == "action" ?Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.all(12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  height: 24.h,
+                  padding: EdgeInsets.symmetric(horizontal: 6.w),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.r),
+                  color: circleColor),
+                  child: Text("Login",style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 4.w),
+                  alignment: Alignment.center,
+                  height: 24.h,
+                  width: 24.w,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.r),
+                  color: primaryDeepBlue),
+                  child: Icon(Icons.visibility_outlined, size: 16, color: primaryWhite,),
+                ),
+              ],
+            ),
+          ):Container(
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.all(12),
             child: Text(e.value.toString(),
               style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),
             ),
           );
-        }).toList());
+        }).toList(),
+    );
   }
 }
+

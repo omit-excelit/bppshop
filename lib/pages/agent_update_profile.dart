@@ -55,42 +55,42 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0.r), color: primaryWhite),
                 child: Column(
                   children: [
-                    Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        Positioned(
-                            top: 70,
-                            left: 70,
-                            child: CircleAvatar(
-                              radius: 50,
-                              backgroundColor: Colors.blue,
-                            )),
-                        Container(
-                          height: 116.h,
-                          width: 116.w,
-                          decoration: BoxDecoration(shape: BoxShape.circle,
-                              color: primaryOrange),
-                        ),
-                        // Positioned(
-                        //   bottom: -20.h,
-                        //     left: 0,
-                        //     right: 0,
-                        //     child: GestureDetector(
-                        //       onTap: (){},
-                        //       child: Container(
-                        //         alignment: Alignment.topCenter,
-                        //   padding: EdgeInsets.only(top: 8.h),
-                        //   height: 61.h,
-                        //   width: 74.w,
-                        //   decoration: BoxDecoration(shape: BoxShape.circle,
-                        //   color: primaryBlue),
-                        //         child: Image.asset("images/edit.png" , height: 24.h, width: 24.w,),
-                        // ),
-                        //     )),
-
-
-                      ],
-                    ),
+                    // Stack(
+                    //   clipBehavior: Clip.values,
+                    //   children: [
+                    //     // Positioned(
+                    //     //     top: 70,
+                    //     //     left: 70,
+                    //     //     child: CircleAvatar(
+                    //     //       radius: 50,
+                    //     //       backgroundColor: Colors.blue,
+                    //     //     )),
+                    //     Container(
+                    //       height: 116.h,
+                    //       width: 116.w,
+                    //       decoration: BoxDecoration(shape: BoxShape.circle,
+                    //           color: primaryOrange),
+                    //     ),
+                    //     Positioned(
+                    //       bottom: -20.h,
+                    //         left: 0,
+                    //         right: 0,
+                    //         child: GestureDetector(
+                    //           onTap: (){},
+                    //           child: Container(
+                    //             alignment: Alignment.topCenter,
+                    //       padding: EdgeInsets.only(top: 8.h),
+                    //       height: 61.h,
+                    //       width: 74.w,
+                    //       decoration: BoxDecoration(shape: BoxShape.circle,
+                    //       color: primaryBlue),
+                    //             child: Image.asset("images/edit.png" , height: 24.h, width: 24.w,),
+                    //     ),
+                    //         )),
+                    //
+                    //
+                    //   ],
+                    // ),
 
                     SizedBox(height: 24.h,),
                     Container(
