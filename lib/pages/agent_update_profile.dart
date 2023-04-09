@@ -55,42 +55,37 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0.r), color: primaryWhite),
                 child: Column(
                   children: [
-                    // Stack(
-                    //   clipBehavior: Clip.values,
-                    //   children: [
-                    //     // Positioned(
-                    //     //     top: 70,
-                    //     //     left: 70,
-                    //     //     child: CircleAvatar(
-                    //     //       radius: 50,
-                    //     //       backgroundColor: Colors.blue,
-                    //     //     )),
-                    //     Container(
-                    //       height: 116.h,
-                    //       width: 116.w,
-                    //       decoration: BoxDecoration(shape: BoxShape.circle,
-                    //           color: primaryOrange),
-                    //     ),
-                    //     Positioned(
-                    //       bottom: -20.h,
-                    //         left: 0,
-                    //         right: 0,
-                    //         child: GestureDetector(
-                    //           onTap: (){},
-                    //           child: Container(
-                    //             alignment: Alignment.topCenter,
-                    //       padding: EdgeInsets.only(top: 8.h),
-                    //       height: 61.h,
-                    //       width: 74.w,
-                    //       decoration: BoxDecoration(shape: BoxShape.circle,
-                    //       color: primaryBlue),
-                    //             child: Image.asset("images/edit.png" , height: 24.h, width: 24.w,),
-                    //     ),
-                    //         )),
-                    //
-                    //
-                    //   ],
-                    // ),
+                    Stack(
+                      children: [
+                        Container(
+                            height: 116.h,
+                            width: 116.w,
+                            decoration: BoxDecoration(shape: BoxShape.circle,
+                                color: primaryOrange),
+                        ),
+                        Positioned(
+                            bottom: 1.h,
+                            left: 0.w,
+                            right: 0.w,
+                            child: Image.asset("images/uap.png", height: 40.h, width: 73.48.w,)),
+                        Positioned(
+                            bottom: -20.h,
+                            left: 0,
+                            right: 0,
+                            child: GestureDetector(
+                              onTap: (){},
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                padding: EdgeInsets.only(top: 8.h),
+                                height: 61.h,
+                                width: 74.w,
+                                decoration: BoxDecoration(shape: BoxShape.circle,),
+                                child: Image.asset("images/edit.png" , height: 24.h, width: 24.w,),
+                              ),
+                            )),
+                      ],
+                    ),
+
 
                     SizedBox(height: 24.h,),
                     Container(
