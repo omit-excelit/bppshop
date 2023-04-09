@@ -101,7 +101,8 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                           Text("Agent Name",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
-                            controller: numberController,
+                            textInputAction: TextInputAction.next,
+                            controller: nameController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
@@ -118,7 +119,8 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                           Text("Agent Mobile",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
-                            controller: nameController,
+                            textInputAction: TextInputAction.next,
+                            controller: numberController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
@@ -135,6 +137,7 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                           Text("Agent Email",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            textInputAction: TextInputAction.next,
                             controller: emailController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(
@@ -234,6 +237,7 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                           Text("Agent Local Address",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            textInputAction: TextInputAction.next,
                             controller: addressController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(

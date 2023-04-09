@@ -62,7 +62,8 @@ class _UpdateCustomerPageState extends State<UpdateCustomerPage> {
                           Text("Customer Name",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
-                            controller: numberController,
+                            textInputAction: TextInputAction.next,
+                            controller: nameController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
@@ -79,7 +80,8 @@ class _UpdateCustomerPageState extends State<UpdateCustomerPage> {
                           Text("Customer Mobile",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
-                            controller: nameController,
+                            textInputAction: TextInputAction.next,
+                            controller: numberController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
@@ -96,6 +98,7 @@ class _UpdateCustomerPageState extends State<UpdateCustomerPage> {
                           Text("Customer Email",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            textInputAction: TextInputAction.next,
                             controller: emailController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(
@@ -195,6 +198,7 @@ class _UpdateCustomerPageState extends State<UpdateCustomerPage> {
                           Text("Customer Local Address",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            textInputAction: TextInputAction.next,
                             controller: addressController,
                             style: TextStyle(color: secondaryBlack),
                             decoration: InputDecoration(
