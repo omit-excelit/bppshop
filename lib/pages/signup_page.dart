@@ -67,6 +67,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             Text("Enter Name",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(
+                              textInputAction: TextInputAction.next,
                               controller: numberController,
                               style: TextStyle(color: secondaryBlack),
                               decoration: InputDecoration(
@@ -84,6 +85,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             Text("Enter Phone Number",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(
+                              textInputAction: TextInputAction.next,
                               controller: nameController,
                               style: TextStyle(color: secondaryBlack),
                               decoration: InputDecoration(
@@ -101,6 +103,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             Text("Enter Email",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(
+                              textInputAction: TextInputAction.next,
                               controller: emailController,
                               style: TextStyle(color: secondaryBlack),
                               decoration: InputDecoration(
@@ -118,6 +121,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             Text("Enter Password",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(
+                              textInputAction: TextInputAction.next,
                               obscureText: _obscureText,
                               controller: passwordController,
                               style: TextStyle(color: secondaryBlack),

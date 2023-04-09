@@ -59,6 +59,7 @@ class _SigninPageState extends State<SigninPage> {
                             Text("Enter Name",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(
+                              textInputAction: TextInputAction.next,
                               controller: emailController,
                               style: TextStyle(color: secondaryBlack),
                               decoration: InputDecoration(
@@ -76,6 +77,7 @@ class _SigninPageState extends State<SigninPage> {
                             Text("Enter Password",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(
+                              textInputAction: TextInputAction.next,
                               obscureText: _obscureText,
                               controller: passwordController,
                               style: TextStyle(color: secondaryBlack),

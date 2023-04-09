@@ -6,9 +6,14 @@ import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
 import 'package:bppshop/pages/login_page.dart';
 import 'package:bppshop/pages/signup_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
+  );
   runApp(const MyApp());
 }
 
