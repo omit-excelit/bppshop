@@ -1,8 +1,9 @@
+import 'dart:io';
+
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
-import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/order_history_page.dart';
 import 'package:bppshop/pages/commission_history_page.dart';
 import 'package:bppshop/pages/customer_list_page.dart';
@@ -37,7 +38,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
               color: drawerHeaderColor,
               child: GestureDetector(
                 onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BottomNavBar()));
+                  Navigator.of(context).pushNamed(BottomNavBar.routeName);
                 },
                 child: Row(
                   children: [
@@ -66,7 +67,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 1;
                         });
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DashboardPage()));
+                        Navigator.of(context).pushNamed(DashboardPage.routeName);
                       },
                       child: Container(
                         margin: EdgeInsets.only(left: 18.w, top: 18.h),
@@ -104,7 +105,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                                   setState(() {
                                     count = 7;
                                   });
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerListPage()));
+                                  Navigator.of(context).pushNamed(CustomerListPage.routeName);
                                 },
                                 child: Container(
                                   padding: EdgeInsets.only(left: 40.w),
@@ -123,7 +124,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                                   setState(() {
                                     count = 8;
                                   });
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddCustomerPage()));
+                                  Navigator.of(context).pushNamed(AddCustomerPage.routeName);
                                 },
                                 child: Container(
                                   padding: EdgeInsets.only(left: 40.w, bottom: 10.h),
@@ -146,7 +147,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 3;
                         });
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OrderHistoryPage()));
+                        Navigator.of(context).pushNamed(OrderHistoryPage.routeName);
                       },
                       child: Container(
                         margin: EdgeInsets.only(left: 15.w, top: 18.h),
@@ -181,7 +182,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                               setState(() {
                                 count = 9;
                               });
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PendingCommissionPage()));
+                              Navigator.of(context).pushNamed(PendingCommissionPage.routeName);
                             },
                             child: Container(
                               padding: EdgeInsets.only(left: 40.w),
@@ -199,7 +200,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                               setState(() {
                                 count = 10;
                               });
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CommissionHistoryPage()));
+                              Navigator.of(context).pushNamed(CommissionHistoryPage.routeName);
                             },
                             child: Container(
                               margin: EdgeInsets.only(top: 22.h, bottom: 10.h),
@@ -221,7 +222,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 5;
                         });
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WalletPage()));
+                        Navigator.of(context).pushNamed(WalletPage.routeName);
                       },
                       child: Container(
                         margin: EdgeInsets.only(left: 15.w, top: 18.h),
@@ -239,7 +240,8 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 6;
                         });
-                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
+                        exit(1);
+                        //Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
                       },
                       child: Container(
                         margin: EdgeInsets.only(left: 16.w, top: 34.h),
