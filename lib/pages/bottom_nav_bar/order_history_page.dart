@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderHistoryPage extends StatefulWidget {
+  static const String routeName = '/order_history_page';
   const OrderHistoryPage({Key? key}) : super(key: key);
 
   @override

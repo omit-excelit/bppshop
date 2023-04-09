@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class PendingCommissionPage extends StatefulWidget {
+  static const String routeName = '/pending_commission_page';
   PendingCommissionPage({Key? key}) : super(key: key);
 
   @override

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CommissionHistoryPage extends StatefulWidget {
+  static const String routeName = '/commission_history_page';
   const CommissionHistoryPage({Key? key}) : super(key: key);
 
   @override

@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavBar extends StatefulWidget {
+  static const String routeName = '/bottom_navigation_bar';
   const BottomNavBar({Key? key}) : super(key: key);
 
   @override

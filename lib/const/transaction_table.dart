@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class ReusableTransactionTablePage extends StatefulWidget {
-  /// Creates the home page.
   ReusableTransactionTablePage({Key? key}) : super(key: key);
 
   @override

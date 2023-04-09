@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCommissionPage extends StatefulWidget {
+  static const String routeName = '/my_commission_page';
   const MyCommissionPage({Key? key}) : super(key: key);
 
   @override

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpPage extends StatefulWidget {
+  static const String routeName = '/sign-up_page';
   const SignUpPage({Key? key}) : super(key: key);
 
   @override

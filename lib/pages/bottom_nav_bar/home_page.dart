@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
+  static const String routeName = '/home_page';
   const HomePage({Key? key}) : super(key: key);
 
   @override

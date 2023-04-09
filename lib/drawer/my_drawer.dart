@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyDrawerPage extends StatefulWidget {
+  static const String routeName = '/my_drawer';
   const MyDrawerPage({Key? key}) : super(key: key);
 
   @override

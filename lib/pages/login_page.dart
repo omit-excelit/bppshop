@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SigninPage extends StatefulWidget {
+  static const String routeName = '/sign-in_page';
   const SigninPage({Key? key}) : super(key: key);
 
   @override

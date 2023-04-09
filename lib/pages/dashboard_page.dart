@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DashboardPage extends StatefulWidget {
+  static const String routeName = '/dashboard_page';
   const DashboardPage({Key? key}) : super(key: key);
 
   @override

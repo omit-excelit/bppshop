@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AgentUpdateProfile extends StatefulWidget {
+  static const String routeName = '/agent_update_profile';
   const AgentUpdateProfile({Key? key}) : super(key: key);
 
   @override

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomerListPage extends StatefulWidget {
+  static const String routeName = '/customer_list_page';
   const CustomerListPage({Key? key}) : super(key: key);
 
   @override

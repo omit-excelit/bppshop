@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WalletPage extends StatefulWidget {
+  static const String routeName = '/wallet_page';
   const WalletPage({Key? key}) : super(key: key);
 
   @override

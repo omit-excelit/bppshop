@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AgentProfilePage extends StatefulWidget {
+  static const String routeName = '/agent_profile_page';
   const AgentProfilePage({Key? key}) : super(key: key);
 
   @override

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UpdateCustomerPage extends StatefulWidget {
+  static const String routeName = '/update_customer_page';
   const UpdateCustomerPage({Key? key}) : super(key: key);
 
   @override
