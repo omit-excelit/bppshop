@@ -1,4 +1,5 @@
 import 'package:bppshop/const/customer_table.dart';
+import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:bppshop/pages/agent_update_profile.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/agent_profile_page.dart';
@@ -67,7 +68,8 @@ class MyApp extends StatelessWidget {
             MyCommissionPage.routeName:(context)=>MyCommissionPage(),
             PendingCommissionPage.routeName:(context)=>PendingCommissionPage(),
             UpdateCustomerPage.routeName:(context)=>UpdateCustomerPage(),
-            WalletPage.routeName:(context)=>WalletPage()
+            WalletPage.routeName:(context)=>WalletPage(),
+            MyDrawerPage.routeName:(context)=>MyDrawerPage()
           },
         );
       },
