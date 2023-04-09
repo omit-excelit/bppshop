@@ -86,7 +86,6 @@ class _AgentUpdateProfileState extends State<AgentUpdateProfile> {
                       ],
                     ),
 
-
                     SizedBox(height: 24.h,),
                     Container(
                       width: double.infinity,

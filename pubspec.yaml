@@ -40,6 +40,9 @@ dependencies:
   flutter_screenutil: ^5.7.0
   syncfusion_flutter_datagrid: ^21.1.37
   provider: ^6.0.5
+  shared_preferences: ^2.1.0
+  firebase_auth: ^4.4.0
+  http: ^0.13.5
 
 
 dev_dependencies:
