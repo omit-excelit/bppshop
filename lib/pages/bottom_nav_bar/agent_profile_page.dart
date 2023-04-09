@@ -80,7 +80,7 @@ class ProfileSection extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AgentUpdateProfile()));
+                          Navigator.of(context).pushNamed(AgentUpdateProfile.routeName);
                         },
                           child: Image.asset("images/edit.png", height: 32.h, width: 32.h,)),
                       SizedBox(height: 16.h,),

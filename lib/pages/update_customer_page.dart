@@ -226,8 +226,7 @@ class _UpdateCustomerPageState extends State<UpdateCustomerPage> {
                     )
                   ],
                 ),
-              )
-
+              ),
             ],
           ),
         ),

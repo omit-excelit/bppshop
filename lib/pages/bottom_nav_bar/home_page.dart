@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                 flex: 2,
                 child: CustomHomePageContainer(
                     onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DashboardPage()));
+                      Navigator.of(context).pushNamed(DashboardPage.routeName);
                     },
                   title: "Dashboard",
                   image: "images/dashboard.png",
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                 flex: 2,
                 child: CustomHomePageContainer(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerPage()));
+                    Navigator.of(context).pushNamed(CustomerPage.routeName);
                   },
                   title: "Customer",
                   image: "images/customer.png",
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                   flex: 2,
                   child: CustomHomePageContainer(
                     onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OrderHistoryPage()));
+                      Navigator.of(context).pushNamed(OrderHistoryPage.routeName);
                     },
                     title: "Order History",
                     image: "images/orderhistory.png",
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                   flex: 2,
                   child: CustomHomePageContainer(
                     onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyCommissionPage()));
+                      Navigator.of(context).pushNamed(MyCommissionPage.routeName);
                     },
                     title: "My Commission",
                     image: "images/mycommission.png",
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                 flex: 2,
                 child: CustomHomePageContainer(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WalletPage()));
+                    Navigator.of(context).pushNamed(WalletPage.routeName);
                   },
                   title: "Wallet",
                   image: "images/wallet.png",

@@ -44,7 +44,7 @@ class _CustomerListPageState extends State<CustomerListPage> {
                   Text("Customer List", style: myStyleMontserrat(18.sp, homeItemColor, FontWeight.w500),),
                   GestureDetector(
                     onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddCustomerPage()));
+                      Navigator.of(context).pushNamed(AddCustomerPage.routeName);
                     },
                     child: Container(
                       height: 36.h,

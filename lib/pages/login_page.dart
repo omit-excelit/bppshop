@@ -121,7 +121,7 @@ class _SigninPageState extends State<SigninPage> {
                           Text("Need an Account?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
                           InkWell(
                             onTap: (){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignUpPage()));
+                              Navigator.of(context).pushNamed(SignUpPage.routeName);
                             },
                               child: Text(" Sign up", style: myStyleMontserrat(14.sp, darkBlue, FontWeight.w600))),
                         ],
@@ -129,7 +129,6 @@ class _SigninPageState extends State<SigninPage> {
                     ],
                   ),
                 )
-
               ],
             ),
           ),

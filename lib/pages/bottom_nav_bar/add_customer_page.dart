@@ -234,7 +234,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                     Align(
                       alignment: Alignment.topRight,
                       child: AddandUpdateButton(onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerProfilePage()));
+                        Navigator.of(context).pushNamed(CustomerProfilePage.routeName);
                       }, title: "Add"),
                     )
                   ],

@@ -38,7 +38,7 @@ class _MyCommissionPageState extends State<MyCommissionPage> {
                 flex: 2,
                 child: CustomHomePageContainer(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PendingCommissionPage()));
+                    Navigator.of(context).pushNamed(PendingCommissionPage.routeName);
                   },
                   title: "Pending Commission",
                   image: "images/customerlist.png",
@@ -49,7 +49,7 @@ class _MyCommissionPageState extends State<MyCommissionPage> {
                 flex: 2,
                 child: CustomHomePageContainer(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CommissionHistoryPage()));
+                    Navigator.of(context).pushNamed(CommissionHistoryPage.routeName);
                   },
                   title: "Commission History",
                   image: "images/commissionhistory.png",

@@ -38,7 +38,7 @@ class _CustomerPageState extends State<CustomerPage> {
                 flex: 2,
                 child: CustomHomePageContainer(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomerListPage()));
+                    Navigator.of(context).pushNamed(CustomerListPage.routeName);
                   },
                   title: "Customer List",
                   image: "images/customerlist.png",
