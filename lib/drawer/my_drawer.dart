@@ -240,8 +240,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                         setState(() {
                           count = 6;
                         });
-                        exit(1);
-                        //Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
                       },
                       child: Container(
                         margin: EdgeInsets.only(left: 16.w, top: 34.h),
