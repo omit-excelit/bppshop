@@ -1,4 +1,6 @@
 import 'package:bppshop/const/color.dart';
+import 'package:bppshop/const/customer_list_table.dart';
+import 'package:bppshop/const/order_history_table.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:flutter/material.dart';
@@ -31,12 +33,12 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
               child: Icon(Icons.menu, size: 16.5.sp, color: secondaryWhite,)),
           title: Text("Order History", style: myStyleMontserrat(18.sp, secondaryWhite, FontWeight.w400),),
         ),
-        body: Container(
-          padding: EdgeInsets.all(12),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                TextFormField(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.w, 12.h, 12.w, 12.h),
+                child: TextFormField(
                   controller: searchController,
                   style: TextStyle(color: secondaryBlack),
                   decoration: InputDecoration(
@@ -54,8 +56,11 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                         borderRadius: BorderRadius.circular(8.r)),
                   ),
                 ),
-                SizedBox(height: 12.h,),
-                Row(
+              ),
+              OrderHistoryTable(),
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.w, 12.h, 12.w, 12.h),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
@@ -89,8 +94,8 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
+import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
+import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/order_history_page.dart';
 import 'package:bppshop/pages/commission_history_page.dart';
 import 'package:bppshop/pages/customer_list_page.dart';
@@ -32,19 +34,24 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
               padding: EdgeInsets.all(12),
               //height: 72.h,
               color: drawerHeaderColor,
-              child: Row(
-                children: [
-                  Image.asset("images/logo1.png",height: 48.h,width: 48.h,),
-                  SizedBox(width: 17.w,),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("BPPSHOP", style: myStyleMontserrat(16.sp, secondaryWhite, FontWeight.w500),),
-                      Text("Agent Panel", style: myStyleMontserrat(16.sp, secondaryWhite, FontWeight.w500),),
-                    ],
-                  ),
-                ],
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BottomNavBar()));
+                },
+                child: Row(
+                  children: [
+                    Image.asset("images/logo1.png",height: 48.h,width: 48.h,),
+                    SizedBox(width: 17.w,),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("BPPSHOP", style: myStyleMontserrat(16.sp, secondaryWhite, FontWeight.w500),),
+                        Text("Agent Panel", style: myStyleMontserrat(16.sp, secondaryWhite, FontWeight.w500),),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             Container(
