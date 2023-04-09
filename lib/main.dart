@@ -1,10 +1,21 @@
 import 'package:bppshop/const/customer_table.dart';
 import 'package:bppshop/pages/agent_update_profile.dart';
 import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
+import 'package:bppshop/pages/bottom_nav_bar/agent_profile_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
+import 'package:bppshop/pages/bottom_nav_bar/order_history_page.dart';
+import 'package:bppshop/pages/commission_history_page.dart';
+import 'package:bppshop/pages/customer_list_page.dart';
+import 'package:bppshop/pages/customer_page.dart';
+import 'package:bppshop/pages/customer_profile_page.dart';
+import 'package:bppshop/pages/dashboard_page.dart';
 import 'package:bppshop/pages/login_page.dart';
+import 'package:bppshop/pages/my_commission.dart';
+import 'package:bppshop/pages/pending_commission_page.dart';
 import 'package:bppshop/pages/signup_page.dart';
+import 'package:bppshop/pages/update_customer_page.dart';
+import 'package:bppshop/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,7 +53,21 @@ class MyApp extends StatelessWidget {
           routes: {
             SignUpPage.routeName : (context) => SignUpPage(),
             SigninPage.routeName : (context) => SigninPage(),
-
+            AddCustomerPage.routeName : (context) => AddCustomerPage(),
+            AgentProfilePage.routeName : (context) => AgentProfilePage(),
+            BottomNavBar.routeName:(context)=>BottomNavBar(),
+            HomePage.routeName:(context)=>HomePage(),
+            OrderHistoryPage.routeName:(context)=>OrderHistoryPage(),
+            AgentUpdateProfile.routeName:(context)=>AgentUpdateProfile(),
+            CommissionHistoryPage.routeName:(context)=>CommissionHistoryPage(),
+            CustomerListPage.routeName:(context)=>CustomerListPage(),
+            CustomerPage.routeName:(context)=>CustomerPage(),
+            CustomerProfilePage.routeName:(context)=>CustomerProfilePage(),
+            DashboardPage.routeName:(context)=>DashboardPage(),
+            MyCommissionPage.routeName:(context)=>MyCommissionPage(),
+            PendingCommissionPage.routeName:(context)=>PendingCommissionPage(),
+            UpdateCustomerPage.routeName:(context)=>UpdateCustomerPage(),
+            WalletPage.routeName:(context)=>WalletPage()
           },
         );
       },
