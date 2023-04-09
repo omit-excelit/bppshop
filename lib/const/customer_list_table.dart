@@ -146,22 +146,28 @@ class CustomerListTableDataSource extends DataGridSource {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  height: 24.h,
-                  padding: EdgeInsets.symmetric(horizontal: 6.w),
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.r),
-                  color: circleColor),
-                  child: Text("Login",style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),),
+                GestureDetector(
+                  onTap: (){},
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 24.h,
+                    padding: EdgeInsets.symmetric(horizontal: 6.w),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.r),
+                    color: circleColor),
+                    child: Text("Login",style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),),
+                  ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(left: 4.w),
-                  alignment: Alignment.center,
-                  height: 24.h,
-                  width: 24.w,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.r),
-                  color: primaryDeepBlue),
-                  child: Icon(Icons.visibility_outlined, size: 16, color: primaryWhite,),
+                GestureDetector(
+                  onTap: (){},
+                  child: Container(
+                    margin: EdgeInsets.only(left: 4.w),
+                    alignment: Alignment.center,
+                    height: 24.h,
+                    width: 24.w,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.r),
+                    color: primaryDeepBlue),
+                    child: Icon(Icons.visibility_outlined, size: 16, color: primaryWhite,),
+                  ),
                 ),
               ],
             ),
