@@ -38,9 +38,10 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          initialRoute: SignUpPage.routeName,
+          initialRoute: SigninPage.routeName,
           routes: {
             SignUpPage.routeName : (context) => SignUpPage(),
+            SigninPage.routeName : (context) => SigninPage(),
 
           },
         );
