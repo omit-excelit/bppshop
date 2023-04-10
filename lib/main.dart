@@ -18,9 +18,13 @@ import 'package:bppshop/pages/pending_commission_page.dart';
 import 'package:bppshop/pages/auth/signup_page.dart';
 import 'package:bppshop/pages/update_customer_page.dart';
 import 'package:bppshop/pages/wallet_page.dart';
+import 'package:bppshop/providers/agent_dashboard_provider.dart';
 import 'package:bppshop/providers/agent_profile_provider.dart';
+import 'package:bppshop/providers/area_provider.dart';
 import 'package:bppshop/providers/auth_provider.dart';
 import 'package:bppshop/providers/bottom_navigation_bar_provider.dart';
+import 'package:bppshop/providers/district_provider.dart';
+import 'package:bppshop/providers/thana_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -51,7 +55,11 @@ class MyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider(create: (context)=> BottomNavigationBarProvider()),
             ChangeNotifierProvider(create: (context)=>AgentProfileProvider()),
-            ChangeNotifierProvider(create: (context)=>AuthProvider())
+            ChangeNotifierProvider(create: (context)=>AuthProvider()),
+            ChangeNotifierProvider(create: (context)=>AgentDashboardProvider()),
+            ChangeNotifierProvider(create: (context)=>DistrictProvider()),
+            ChangeNotifierProvider(create: (context)=>ThanaProvider()),
+            ChangeNotifierProvider(create: (context)=>AreaProvider())
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
