@@ -45,6 +45,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         unselectedLabelStyle: myStyleMontserrat(11.sp, bottomLabelColor, FontWeight.w500),
+        selectedLabelStyle: myStyleMontserrat(11.sp, bottomLabelColor, FontWeight.w500),
+        selectedItemColor: primaryOrange,
         unselectedItemColor: bottomLabelColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -68,8 +70,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedLabelStyle: myStyleMontserrat(11.sp, bottomLabelColor, FontWeight.w500),
-        selectedItemColor: primaryOrange,
         onTap: _onItemTapped,
       ),
     );
