@@ -11,15 +11,18 @@ import 'package:bppshop/pages/customer_list_page.dart';
 import 'package:bppshop/pages/customer_page.dart';
 import 'package:bppshop/pages/customer_profile_page.dart';
 import 'package:bppshop/pages/dashboard_page.dart';
+import 'package:bppshop/pages/landing_page.dart';
 import 'package:bppshop/pages/login_page.dart';
 import 'package:bppshop/pages/my_commission.dart';
 import 'package:bppshop/pages/pending_commission_page.dart';
 import 'package:bppshop/pages/signup_page.dart';
 import 'package:bppshop/pages/update_customer_page.dart';
 import 'package:bppshop/pages/wallet_page.dart';
+import 'package:bppshop/providers/bottom_navigation_bar_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,35 +45,41 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          // You can use the library anywhere in the app even in theme
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (context)=> BottomNavigationBarProvider())
+          ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'First Method',
+            // You can use the library anywhere in the app even in theme
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+            ),
+            initialRoute: SigninPage.routeName,
+            routes: {
+              SignUpPage.routeName : (context) => SignUpPage(),
+              SigninPage.routeName : (context) => SigninPage(),
+              AddCustomerPage.routeName : (context) => AddCustomerPage(),
+              AgentProfilePage.routeName : (context) => AgentProfilePage(),
+              BottomNavBar.routeName:(context)=>BottomNavBar(),
+              HomePage.routeName:(context)=>HomePage(),
+              OrderHistoryPage.routeName:(context)=>OrderHistoryPage(),
+              AgentUpdateProfile.routeName:(context)=>AgentUpdateProfile(),
+              CommissionHistoryPage.routeName:(context)=>CommissionHistoryPage(),
+              CustomerListPage.routeName:(context)=>CustomerListPage(),
+              CustomerPage.routeName:(context)=>CustomerPage(),
+              CustomerProfilePage.routeName:(context)=>CustomerProfilePage(),
+              DashboardPage.routeName:(context)=>DashboardPage(),
+              MyCommissionPage.routeName:(context)=>MyCommissionPage(),
+              PendingCommissionPage.routeName:(context)=>PendingCommissionPage(),
+              UpdateCustomerPage.routeName:(context)=>UpdateCustomerPage(),
+              WalletPage.routeName:(context)=>WalletPage(),
+              MyDrawerPage.routeName:(context)=>MyDrawerPage(),
+              LandingPage.routeName:(context)=>LandingPage()
+            },
           ),
-          initialRoute: SigninPage.routeName,
-          routes: {
-            SignUpPage.routeName : (context) => SignUpPage(),
-            SigninPage.routeName : (context) => SigninPage(),
-            AddCustomerPage.routeName : (context) => AddCustomerPage(),
-            AgentProfilePage.routeName : (context) => AgentProfilePage(),
-            BottomNavBar.routeName:(context)=>BottomNavBar(),
-            HomePage.routeName:(context)=>HomePage(),
-            OrderHistoryPage.routeName:(context)=>OrderHistoryPage(),
-            AgentUpdateProfile.routeName:(context)=>AgentUpdateProfile(),
-            CommissionHistoryPage.routeName:(context)=>CommissionHistoryPage(),
-            CustomerListPage.routeName:(context)=>CustomerListPage(),
-            CustomerPage.routeName:(context)=>CustomerPage(),
-            CustomerProfilePage.routeName:(context)=>CustomerProfilePage(),
-            DashboardPage.routeName:(context)=>DashboardPage(),
-            MyCommissionPage.routeName:(context)=>MyCommissionPage(),
-            PendingCommissionPage.routeName:(context)=>PendingCommissionPage(),
-            UpdateCustomerPage.routeName:(context)=>UpdateCustomerPage(),
-            WalletPage.routeName:(context)=>WalletPage(),
-            MyDrawerPage.routeName:(context)=>MyDrawerPage()
-          },
         );
       },
     );

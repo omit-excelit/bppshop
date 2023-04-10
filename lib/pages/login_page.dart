@@ -4,6 +4,7 @@ import 'package:bppshop/const/custom_textfield.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
+import 'package:bppshop/pages/landing_page.dart';
 import 'package:bppshop/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -112,7 +113,11 @@ class _SigninPageState extends State<SigninPage> {
                       ),
                       SizedBox(height: 25.h,),
                       customButton(() {
-                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>BottomNavBar()), (route) => false);
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>
+                           // BottomNavBar()
+                          LandingPage()
+                        )
+                            , (route) => false);
                       }, "Login"),
                       SizedBox(height: 10.h,),
                       Text("Forgot Your Password?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
