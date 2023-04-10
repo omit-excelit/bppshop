@@ -18,6 +18,8 @@ import 'package:bppshop/pages/pending_commission_page.dart';
 import 'package:bppshop/pages/auth/signup_page.dart';
 import 'package:bppshop/pages/update_customer_page.dart';
 import 'package:bppshop/pages/wallet_page.dart';
+import 'package:bppshop/providers/agent_profile_provider.dart';
+import 'package:bppshop/providers/auth_provider.dart';
 import 'package:bppshop/providers/bottom_navigation_bar_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -47,7 +49,9 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MultiProvider(
           providers: [
-            ChangeNotifierProvider(create: (context)=> BottomNavigationBarProvider())
+            ChangeNotifierProvider(create: (context)=> BottomNavigationBarProvider()),
+            ChangeNotifierProvider(create: (context)=>AgentProfileProvider()),
+            ChangeNotifierProvider(create: (context)=>AuthProvider())
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
