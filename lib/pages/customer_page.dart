@@ -1,6 +1,7 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
 import 'package:bppshop/const/style.dart';
+import 'package:bppshop/pages/bottom_nav_bar/add_customer_page.dart';
 import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:bppshop/pages/customer_list_page.dart';
 import 'package:bppshop/providers/bottom_navigation_bar_provider.dart';
@@ -53,6 +54,7 @@ class _CustomerPageState extends State<CustomerPage> {
                     flex: 2,
                     child: CustomHomePageContainer(
                       onTap: (){
+                        Navigator.of(context).pushNamed(AddCustomerPage.routeName);
                       },
                       title: "Add Customer",
                       image: "images/addcustomer.png",
