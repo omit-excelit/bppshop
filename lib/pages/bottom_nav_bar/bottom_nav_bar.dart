@@ -41,7 +41,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
+        backgroundColor: navBarBgColor,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         unselectedLabelStyle: myStyleMontserrat(11.sp, bottomLabelColor, FontWeight.w500),
@@ -50,21 +50,21 @@ class _BottomNavBarState extends State<BottomNavBar> {
         unselectedItemColor: bottomLabelColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            backgroundColor: Colors.black,
+            //backgroundColor: navBarBgColor,
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.black,
+            //backgroundColor: navBarBgColor,
             icon: Icon(Icons.access_time_filled_outlined),
             label: 'Order History',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.black,
+            //backgroundColor: navBarBgColor,
             icon: Icon(Icons.person),
             label: 'Profile',
           ),BottomNavigationBarItem(
-            backgroundColor: Colors.black,
+            //backgroundColor: navBarBgColor,
             icon: Icon(Icons.person_add_alt_1),
             label: 'Add Customer',
           ),

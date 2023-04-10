@@ -27,3 +27,4 @@ final textfieldBorderColor = Color(0xffBDBDBD);
 final containerBorderColor = Color(0xffDFDFDF);
 final countColor = Color(0xffF8F8F8);
 final circleColor = Color(0xffDADCE0);
+final navBarBgColor = Color(0xff0E2232);
