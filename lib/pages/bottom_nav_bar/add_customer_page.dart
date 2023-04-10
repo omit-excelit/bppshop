@@ -74,6 +74,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                           Text("Customer Name",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            keyboardType: TextInputType.text,
                             textInputAction: TextInputAction.next,
                             controller: nameController,
                             style: TextStyle(color: secondaryBlack),
@@ -92,6 +93,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                           Text("Customer Mobile",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            keyboardType: TextInputType.number,
                             textInputAction: TextInputAction.next,
                             controller: numberController,
                             style: TextStyle(color: secondaryBlack),
@@ -110,6 +112,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                           Text("Customer Email",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            keyboardType: TextInputType.emailAddress,
                             textInputAction: TextInputAction.next,
                             controller: emailController,
                             style: TextStyle(color: secondaryBlack),
@@ -212,6 +215,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                           Text("Customer Local Address",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                           SizedBox(height: 4.h,),
                           TextFormField(
+                            keyboardType: TextInputType.text,
                             textInputAction: TextInputAction.next,
                             controller: addressController,
                             style: TextStyle(color: secondaryBlack),
