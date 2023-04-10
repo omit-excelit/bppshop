@@ -44,6 +44,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         backgroundColor: Colors.black,
         showSelectedLabels: true,
         showUnselectedLabels: true,
+        unselectedLabelStyle: myStyleMontserrat(11.sp, bottomLabelColor, FontWeight.w500),
+        unselectedItemColor: bottomLabelColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             backgroundColor: Colors.black,
