@@ -8,7 +8,7 @@ import 'package:bppshop/pages/bottom_nav_bar/order_history_page.dart';
 import 'package:bppshop/pages/commission_history_page.dart';
 import 'package:bppshop/pages/customer_list_page.dart';
 import 'package:bppshop/pages/dashboard_page.dart';
-import 'package:bppshop/pages/login_page.dart';
+import 'package:bppshop/pages/auth/login_page.dart';
 import 'package:bppshop/pages/pending_commission_page.dart';
 import 'package:bppshop/pages/wallet_page.dart';
 import 'package:flutter/material.dart';

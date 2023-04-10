@@ -1,7 +1,7 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
 import 'package:bppshop/const/style.dart';
-import 'package:bppshop/pages/login_page.dart';
+import 'package:bppshop/pages/auth/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

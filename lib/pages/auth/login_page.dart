@@ -5,7 +5,7 @@ import 'package:bppshop/const/style.dart';
 import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
 import 'package:bppshop/pages/landing_page.dart';
-import 'package:bppshop/pages/signup_page.dart';
+import 'package:bppshop/pages/auth/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
