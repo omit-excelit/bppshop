@@ -18,7 +18,7 @@ class SigninPage extends StatefulWidget {
 }
 
 class _SigninPageState extends State<SigninPage> {
-  TextEditingController emailController = TextEditingController();
+  TextEditingController numberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool _obscureText = true;
 
@@ -57,15 +57,15 @@ class _SigninPageState extends State<SigninPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Enter Name",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
+                            Text("Enter Number",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
                             SizedBox(height: 4.h,),
                             TextFormField(
                               textInputAction: TextInputAction.next,
-                              controller: emailController,
+                              controller: numberController,
                               style: TextStyle(color: secondaryBlack),
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                                hintText: "Enter Your Email",
+                                hintText: "Enter Your Phone Number",
                                 hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
                                 filled: true,
                                 fillColor: textFieldColor,
