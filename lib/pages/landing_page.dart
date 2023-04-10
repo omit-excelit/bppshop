@@ -15,7 +15,6 @@ class LandingPage extends StatelessWidget {
            bottomNavigationBar: bottomNavigationBarProvider.bottomNavigationBar(context,true),
         );
       },
-
     );
   }
 }

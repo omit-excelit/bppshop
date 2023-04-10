@@ -59,7 +59,6 @@ class BottomNavigationBarProvider with ChangeNotifier{
    onItemTapped(int index,BuildContext context,bool isLanding) {
     _selectedIndex = index;
     if(!isLanding){
-      //Navigator.pushNamed(context, LandingPage.routeName);
       Navigator.pushNamedAndRemoveUntil(context, LandingPage.routeName, (route) => false);
     }
     notifyListeners();
@@ -80,7 +79,5 @@ class BottomNavigationBarProvider with ChangeNotifier{
     }
     notifyListeners();
   }
-
-
 
 }
