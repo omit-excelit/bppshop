@@ -2,6 +2,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 final String baseUrl = "https://agentapi.bppshop.com.bd/api/";
+final String imageUrl = "https://agentapi.bppshop.com.bd/";
 
 class CustomHttpRequest{
   static const Map<String, String> defaultHeader = {

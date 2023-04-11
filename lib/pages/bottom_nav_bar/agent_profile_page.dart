@@ -1,9 +1,14 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
+import 'package:bppshop/http_data/custom_http.dart';
+import 'package:bppshop/model/agent_profile_model.dart';
 import 'package:bppshop/pages/agent_update_profile.dart';
+import 'package:bppshop/providers/agent_profile_provider.dart';
+import 'package:bppshop/providers/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class AgentProfilePage extends StatefulWidget {
   static const String routeName = '/agent_profile_page';
@@ -15,8 +20,11 @@ class AgentProfilePage extends StatefulWidget {
 
 class _AgentProfilePageState extends State<AgentProfilePage> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
+    //final authProvider = Provider.of<AuthProvider>(context);
+
     return Scaffold(
       drawer: MyDrawerPage(),
       key: _scaffoldkey,
@@ -46,13 +54,24 @@ class _AgentProfilePageState extends State<AgentProfilePage> {
   }
 }
 
-class ProfileSection extends StatelessWidget {
-  const ProfileSection({
-    super.key,
-  });
+class ProfileSection extends StatefulWidget {
+
+  @override
+  State<ProfileSection> createState() => _ProfileSectionState();
+}
+
+class _ProfileSectionState extends State<ProfileSection> {
+  @override
+  void initState() {
+    Provider.of<AgentProfileProvider>(context, listen: false).getAgentProfileData();
+    super.initState();
+  }
+
+  List<AgentProfileModel> agentProfileData = [];
 
   @override
   Widget build(BuildContext context) {
+    agentProfileData = Provider.of<AgentProfileProvider>(context).agentProfileData;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 12.h),
       padding: EdgeInsets.all(12),
@@ -70,7 +89,9 @@ class ProfileSection extends StatelessWidget {
                       height: 116.h,
                       width: 116.w,
                       decoration: BoxDecoration(shape: BoxShape.circle,
+                      //image: DecorationImage(image: NetworkImage("${imageUrl}${agentProfileData[0].data!.image}",)),
                       color: primaryOrange),
+                      //child: Image.network("${imageUrl}${agentProfileData[0].data!.image}", fit: BoxFit.cover,),
                     ),
                   ),
               flex: 2,),
@@ -84,8 +105,8 @@ class ProfileSection extends StatelessWidget {
                         },
                           child: Image.asset("images/edit.png", height: 32.h, width: 32.h,)),
                       SizedBox(height: 16.h,),
-                      Text("Shahid Mahmum", style: myStyleMontserrat(16.sp, homeItemColor, FontWeight.w600),),
-                      Text("mahmum@gmail.com", style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w400),),
+                      Text("${agentProfileData[0].data!.name}", style: myStyleMontserrat(16.sp, homeItemColor, FontWeight.w600),),
+                      Text("${agentProfileData[0].data!.email}", style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w400),),
                     ],
                   ),
               flex: 2,),
@@ -99,7 +120,7 @@ class ProfileSection extends StatelessWidget {
             color: bottomLabelColor,
           ),
           Text("Balance", style: myStyleMontserrat(16.sp, homeItemColor, FontWeight.w600),),
-          Text("৳0.00", style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),),
+          Text("৳${agentProfileData[0].data!.walletBalance}", style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),),
           Divider(
             endIndent: 0,
             indent: 0,
@@ -111,7 +132,7 @@ class ProfileSection extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Role: Agent", style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w600),),
+                Text("Role: ${agentProfileData[0].role}", style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w600),),
                 SizedBox(height: 8.h,),
                 Text("CONTACT INFORMATION:", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
                 // SizedBox(height: 12.h,),
@@ -151,21 +172,21 @@ class ProfileSection extends StatelessWidget {
                       padding: EdgeInsets.only(top: 10.h),
                       child: Image.asset("images/call.png")),
                   title: Text("Mobile", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
-                  subtitle: Text("01711369672", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
+                  subtitle: Text("${agentProfileData[0].data!.phone}", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
                 ),
                 ListTile(
                   leading: Padding(
                       padding: EdgeInsets.only(top: 12.h),
                       child: Image.asset("images/mail.png")),
                   title: Text("Email", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
-                  subtitle: Text("mahmum@gmail.com", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
+                  subtitle: Text("${agentProfileData[0].data!.email}", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
                 ),
                 ListTile(
                   leading: Padding(
                       padding: EdgeInsets.only(top: 10.h),
                       child: Image.asset("images/home.png")),
                   title: Text("Address", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
-                  subtitle: Text("16/1 (9th Floor), Alhaz Shamsuddin Mansion, New Eskaton Garden Road,", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
+                  subtitle: Text("${agentProfileData[0].data!.address}", style: myStyleMontserrat(14.sp, homeItemColor, FontWeight.w600),),
                 ),
               ],
             ),

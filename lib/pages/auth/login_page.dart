@@ -7,9 +7,11 @@ import 'package:bppshop/const/style.dart';
 import 'package:bppshop/http_data/custom_http.dart';
 import 'package:bppshop/pages/landing_page.dart';
 import 'package:bppshop/pages/auth/signup_page.dart';
+import 'package:bppshop/providers/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninPage extends StatefulWidget {
@@ -50,6 +52,7 @@ class _SigninPageState extends State<SigninPage> {
           //showSnackBar(context: context, content: "Login Successfully");
           sharedPreferences = await SharedPreferences.getInstance();
           sharedPreferences!.setString("token", data["token"]);
+          Provider.of<AuthProvider>(context ,listen: false);
           Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> LandingPage()), (route) => false);
           showToastMessage("Login Successfully");
         } else {
@@ -163,7 +166,7 @@ class _SigninPageState extends State<SigninPage> {
                       ),
                       SizedBox(height: 25.h,),
                       customButton(() {
-                        getLoginData();
+                          getLoginData();
                       }, "Login"),
                       SizedBox(height: 10.h,),
                       Text("Forgot Your Password?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
