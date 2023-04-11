@@ -24,6 +24,7 @@ import 'package:bppshop/providers/area_provider.dart';
 import 'package:bppshop/providers/auth_provider.dart';
 import 'package:bppshop/providers/bottom_navigation_bar_provider.dart';
 import 'package:bppshop/providers/district_provider.dart';
+import 'package:bppshop/providers/order_history_provider.dart';
 import 'package:bppshop/providers/thana_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -65,7 +66,8 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (context)=>AgentDashboardProvider()),
             ChangeNotifierProvider(create: (context)=>DistrictProvider()),
             ChangeNotifierProvider(create: (context)=>ThanaProvider()),
-            ChangeNotifierProvider(create: (context)=>AreaProvider())
+            ChangeNotifierProvider(create: (context)=>AreaProvider()),
+            ChangeNotifierProvider(create: (context)=>OrderHistoryProvider())
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
