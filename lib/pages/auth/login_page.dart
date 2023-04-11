@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
+import 'package:bppshop/const/show_toast.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/http_data/custom_http.dart';
 import 'package:bppshop/pages/landing_page.dart';
@@ -36,9 +37,8 @@ class _SigninPageState extends State<SigninPage> {
         "agent_mobile_number": numberController.text.toString(),
         "password": passwordController.text.toString()
       });
-
-      print("ddddddd${response.statusCode}");
-      print("ddddddd${response.body}");
+      //print("ddddddd${response.statusCode}");
+      //print("ddddddd${response.body}");
       setState(() {
         isLoading = false;
       });
@@ -51,10 +51,13 @@ class _SigninPageState extends State<SigninPage> {
           sharedPreferences = await SharedPreferences.getInstance();
           sharedPreferences!.setString("token", data["token"]);
           Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> LandingPage()), (route) => false);
+          showToastMessage("Login Successfully");
         } else {
+          showToastMessage("Email or Password doesn't match");
           //showSnackBar(context: context, content: "Email or Password doesn't match");
         }
       }else{
+        showToastMessage("Email or Password doesn't match");
         //showSnackBar(context: context, content: "Email or Password doesn't match");
       }
     } catch (e) {
