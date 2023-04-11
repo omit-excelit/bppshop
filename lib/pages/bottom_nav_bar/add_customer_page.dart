@@ -2,9 +2,12 @@ import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
+import 'package:bppshop/model/district_model.dart';
 import 'package:bppshop/pages/customer_profile_page.dart';
+import 'package:bppshop/providers/district_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class AddCustomerPage extends StatefulWidget {
   static const String routeName = '/add_customer_page';
@@ -32,7 +35,16 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
   String ?_selectedArea;
 
   @override
+  void initState() {
+    Provider.of<DistrictProvider>(context, listen: false).getDistrictData();
+    super.initState();
+  }
+
+  List<DistrictModel> districtData = [];
+
+  @override
   Widget build(BuildContext context) {
+    districtData = Provider.of<DistrictProvider>(context).districtData;
     return Scaffold(
       drawer: MyDrawerPage(),
       key: _scaffoldkey,
@@ -143,13 +155,13 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                 value: _selectedDistrict,
                                 onChanged: (newValue) {
                                   setState(() {
-                                    _selectedDistrict = newValue!;
+                                    _selectedDistrict = newValue as String?;
                                   });
                                 },
-                                items: districtItems.map((districtItems) {
+                                items: districtData.map((districtData) {
                                   return DropdownMenuItem(
-                                    child: Text(districtItems, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
-                                    value: districtItems,
+                                    child: Text("${districtData.data}", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                    value: districtData,
                                   );
                                 }).toList(),
                               ),
