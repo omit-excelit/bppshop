@@ -2,7 +2,9 @@ import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
+import 'package:bppshop/model/agent_dashboard_model.dart';
 import 'package:bppshop/pages/bottom_nav_bar/agent_profile_page.dart';
+import 'package:bppshop/providers/agent_dashboard_provider.dart';
 import 'package:bppshop/providers/bottom_navigation_bar_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,8 +20,18 @@ class DashboardPage extends StatefulWidget {
 
 class _DashboardPageState extends State<DashboardPage> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey();
+
+  @override
+  void initState() {
+    Provider.of<AgentDashboardProvider>(context, listen: false).getAgentDashboardData();
+    super.initState();
+  }
+
+  List<AgentDashboardModel> agentDashboardData = [];
+
   @override
   Widget build(BuildContext context) {
+    agentDashboardData = Provider.of<AgentDashboardProvider>(context).agentDashboardData;
     return Consumer<BottomNavigationBarProvider>(
       builder: (context, bottomNavigationBarProvider, child){
         return Scaffold(
