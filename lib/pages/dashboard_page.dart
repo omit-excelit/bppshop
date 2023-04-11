@@ -48,7 +48,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 child: Icon(Icons.menu, size: 16.5.sp, color: secondaryWhite,)),
             title: Text("Dashboard", style: myStyleMontserrat(18.sp, secondaryWhite, FontWeight.w400),),
           ),
-          body: Container(
+          body: agentDashboardData.isNotEmpty?Container(
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -99,7 +99,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ],
               ),
             ),
-          ),
+          ):SizedBox(height: 0.h,),
           bottomNavigationBar: bottomNavigationBarProvider.bottomNavigationBar(context,false),
         );
       }

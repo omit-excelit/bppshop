@@ -29,19 +29,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp],
   );
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 //check git credential 4rd time
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+ MyApp({super.key});
+
+  SigninPage signinPage = SigninPage();
+
+
+
 
   // This widget is the root of your application.
   @override

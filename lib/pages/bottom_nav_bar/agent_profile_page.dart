@@ -72,7 +72,7 @@ class _ProfileSectionState extends State<ProfileSection> {
   @override
   Widget build(BuildContext context) {
     agentProfileData = Provider.of<AgentProfileProvider>(context).agentProfileData;
-    return Container(
+    return agentProfileData.isNotEmpty?Container(
       margin: EdgeInsets.symmetric(vertical: 12.h),
       padding: EdgeInsets.all(12),
       width: double.infinity,
@@ -193,6 +193,8 @@ class _ProfileSectionState extends State<ProfileSection> {
           ),
         ],
       ),
+    ):SizedBox(
+      height: 0.h,
     );
   }
 }

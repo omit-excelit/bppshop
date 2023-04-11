@@ -16,7 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninPage extends StatefulWidget {
   static const String routeName = '/sign-in_page';
-  const SigninPage({Key? key}) : super(key: key);
+  SigninPage({Key? key}) : super(key: key);
 
   @override
   State<SigninPage> createState() => _SigninPageState();
@@ -67,6 +67,8 @@ class _SigninPageState extends State<SigninPage> {
       print("Problem is ------ ${e}");
     }
   }
+
+
 
   @override
   void dispose() {
@@ -193,3 +195,8 @@ class _SigninPageState extends State<SigninPage> {
     );
   }
 }
+
+// saveUserToken() async{
+//   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+//   return sharedPreferences!.getString("token");
+// }
