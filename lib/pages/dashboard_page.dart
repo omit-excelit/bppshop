@@ -63,35 +63,35 @@ class _DashboardPageState extends State<DashboardPage> {
                         Row(children: [
                           Expanded(
                             flex: 2,
-                            child: DashboardCustomContainer(onTap: (){}, title: "Total Customer", amount: "5000", image: "images/totalcustomer.png", color: primaryOrange,),
+                            child: DashboardCustomContainer(onTap: (){}, title: "Total Customer", amount: "${agentDashboardData[0].data!.totalCustomers}", image: "images/totalcustomer.png", color: primaryOrange,),
                           ),
                           SizedBox(width: 12.w,),
                           Expanded(
                             flex: 2,
-                            child: DashboardCustomContainer(onTap: (){}, title: "Total Withdraw", amount: "2", image: "images/withdraw.png", color: primaryNaviBlue,),),
+                            child: DashboardCustomContainer(onTap: (){}, title: "Total Withdraw", amount: "${agentDashboardData[0].data!.totalWithdraw}", image: "images/withdraw.png", color: primaryNaviBlue,),),
                         ],),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 12.h),
                           child: Row(children: [
                             Expanded(
                               flex: 2,
-                              child: DashboardCustomContainer(onTap: (){}, title: "Total Sale Amount", amount: "৳5000000", image: "images/cashcoin.png", color: primaryGreen,),
+                              child: DashboardCustomContainer(onTap: (){}, title: "Total Sale Amount", amount: "৳${agentDashboardData[0].data!.totalSaleAmount}", image: "images/cashcoin.png", color: primaryGreen,),
                             ),
                             SizedBox(width: 12.w,),
                             Expanded(
                               flex: 2,
-                              child: DashboardCustomContainer(onTap: (){}, title: "Total Orders", amount: "5000", image: "images/cartcheck.png", color: beguniColor,),),
+                              child: DashboardCustomContainer(onTap: (){}, title: "Total Orders", amount: "${agentDashboardData[0].data!.totalOrders}", image: "images/cartcheck.png", color: beguniColor,),),
                           ],),
                         ),
                         Row(children: [
                           Expanded(
                             flex: 2,
-                            child: DashboardCustomContainer(onTap: (){}, title: "Total Commission", amount: "৳45621232", image: "images/cashstack.png", color: lightGreen,),
+                            child: DashboardCustomContainer(onTap: (){}, title: "Total Commission", amount: "৳${agentDashboardData[0].data!.totalCommission}", image: "images/cashstack.png", color: lightGreen,),
                           ),
                           SizedBox(width: 12.w,),
                           Expanded(
                             flex: 2,
-                            child: DashboardCustomContainer(onTap: (){}, title: "Total Purchase", amount: "152668", image: "images/cartplus.png", color: secondaryRed,),),
+                            child: DashboardCustomContainer(onTap: (){}, title: "Total Purchase", amount: "${agentDashboardData[0].data!.totalPurchase}", image: "images/cartplus.png", color: secondaryRed,),),
                         ],),
                       ],
                     ),
