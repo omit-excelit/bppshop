@@ -1,14 +1,15 @@
+import 'dart:convert';
+
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
-import 'package:bppshop/const/custom_textfield.dart';
 import 'package:bppshop/const/style.dart';
-import 'package:bppshop/pages/bottom_nav_bar/bottom_nav_bar.dart';
-import 'package:bppshop/pages/bottom_nav_bar/home_page.dart';
+import 'package:bppshop/http_data/custom_http.dart';
 import 'package:bppshop/pages/landing_page.dart';
 import 'package:bppshop/pages/auth/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninPage extends StatefulWidget {
   static const String routeName = '/sign-in_page';
@@ -22,6 +23,52 @@ class _SigninPageState extends State<SigninPage> {
   TextEditingController numberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool _obscureText = true;
+  bool isLoading = false;
+  SharedPreferences ?sharedPreferences;
+
+  getLoginData() async {
+    try {
+      setState(() {
+        isLoading = true;
+      });
+      String urlLink = "${baseUrl}login";
+      var response = await http.post(Uri.parse(urlLink), body: {
+        "agent_mobile_number": numberController.text.toString(),
+        "password": passwordController.text.toString()
+      });
+
+      print("ddddddd${response.statusCode}");
+      print("ddddddd${response.body}");
+      setState(() {
+        isLoading = false;
+      });
+
+      if(response.statusCode==200){
+        var data = jsonDecode(response.body);
+        if (data["token"] != null ) {
+          print("Token is ${data["token"]}");
+          //showSnackBar(context: context, content: "Login Successfully");
+          sharedPreferences = await SharedPreferences.getInstance();
+          sharedPreferences!.setString("token", data["token"]);
+          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> LandingPage()), (route) => false);
+        } else {
+          //showSnackBar(context: context, content: "Email or Password doesn't match");
+        }
+      }else{
+        //showSnackBar(context: context, content: "Email or Password doesn't match");
+      }
+    } catch (e) {
+      print("Problem is ------ ${e}");
+    }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    numberController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,11 +160,7 @@ class _SigninPageState extends State<SigninPage> {
                       ),
                       SizedBox(height: 25.h,),
                       customButton(() {
-                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>
-                           // BottomNavBar()
-                          LandingPage()
-                        )
-                            , (route) => false);
+                        getLoginData();
                       }, "Login"),
                       SizedBox(height: 10.h,),
                       Text("Forgot Your Password?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
