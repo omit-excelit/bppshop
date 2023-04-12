@@ -40,12 +40,13 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
     super.initState();
   }
 
-  final List<DistrictModel> districtData = [];
+  List<DistrictModel> districtData = [];
 
   @override
   Widget build(BuildContext context) {
-    final districtData = Provider.of<DistrictProvider>(context).districtData;
-    //final districtProvider = Provider.of<DistrictProvider>(context);
+
+    districtData = Provider.of<DistrictProvider>(context).districtData;
+
     return Scaffold(
       drawer: MyDrawerPage(),
       key: _scaffoldkey,
@@ -159,10 +160,10 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                     _selectedDistrict = newValue as String?;
                                   });
                                 },
-                                items: districtItems.map((district) {
+                                items: districtData.map((district) {
                                   return DropdownMenuItem(
-                                    child: Text(district, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
-                                    value: district.toString(),
+                                    child: Text(district.data![0].name as String, style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                    value: district.data![0].id
                                   );
                                 }).toList(),
                               ),
