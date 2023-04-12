@@ -152,16 +152,16 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                 iconEnabledColor: secondaryBlack,
                                 isExpanded: true,
                                 hint: Text('Select',style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)), // Not necessary for Option 1
-                                value: _selectedDistrict,
+                                value: districtData.length,
                                 onChanged: (newValue) {
                                   setState(() {
                                     _selectedDistrict = newValue as String?;
                                   });
                                 },
-                                items: districtData.map((districtData) {
+                                items: districtData.map((data) {
                                   return DropdownMenuItem(
-                                    child: Text("${districtData.data}", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
-                                    value: districtData,
+                                    child: Text("${districtData.length}", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
+                                    value: data,
                                   );
                                 }).toList(),
                               ),
