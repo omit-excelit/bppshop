@@ -1,5 +1,6 @@
 import 'package:bppshop/const/color.dart';
 import 'package:bppshop/const/custom_button.dart';
+import 'package:bppshop/const/custom_circular_progress_indicator.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:bppshop/model/agent_dashboard_model.dart';
@@ -99,7 +100,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ],
               ),
             ),
-          ):SizedBox(height: 0.h,),
+          ):customCircularProgressIndicator(),
           bottomNavigationBar: bottomNavigationBarProvider.bottomNavigationBar(context,false),
         );
       }

@@ -1,4 +1,5 @@
 import 'package:bppshop/const/color.dart';
+import 'package:bppshop/const/custom_circular_progress_indicator.dart';
 import 'package:bppshop/const/style.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:bppshop/http_data/custom_http.dart';
@@ -192,8 +193,6 @@ class _ProfileSectionState extends State<ProfileSection> {
           ),
         ],
       ),
-    ):SizedBox(
-      height: 0.h,
-    );
+    ):customCircularProgressIndicator();
   }
 }

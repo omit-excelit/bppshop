@@ -29,6 +29,8 @@ class _SigninPageState extends State<SigninPage> {
   bool isLoading = false;
   SharedPreferences ?sharedPreferences;
   GlobalKey<FormState> _formKey = GlobalKey();
+  FocusNode numberFocusNode = FocusNode();
+  FocusNode passwordFocusNode = FocusNode();
 
   getLoginData() async {
     try {
@@ -103,107 +105,111 @@ class _SigninPageState extends State<SigninPage> {
                   padding: EdgeInsets.all(12),
                   width: double.infinity,
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0.r), color: primaryWhite),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 16.h),
-                        child: Text("Login", style: myStyleMontserrat(22.sp, primaryBlack, FontWeight.w500),),
-                      ),
-                      Container(
-                        width: double.infinity,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Enter Number",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
-                            SizedBox(height: 4.h,),
-                            TextFormField(
-                              keyboardType: TextInputType.number,
-                              textInputAction: TextInputAction.next,
-                              controller: numberController,
-                              style: TextStyle(color: secondaryBlack),
-                              validator: (value) {
-                                if (value == null) {
-                                  return "Phone Number required.";
-                                }
-                                if (value?.length != 11){
-                                  return 'Phone Number must be of 11 digit.';
-                                }
-                              },
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                                hintText: "Enter Your Phone Number",
-                                hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                                filled: true,
-                                fillColor: textFieldColor,
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(8.r)),
-                              ),
-                            ),
-                            SizedBox(height: 10.h,),
-                            Text("Enter Password",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
-                            SizedBox(height: 4.h,),
-                            TextFormField(
-                              keyboardType: TextInputType.text,
-                              textInputAction: TextInputAction.next,
-                              obscureText: _obscureText,
-                              controller: passwordController,
-                              style: TextStyle(color: secondaryBlack),
-                              validator: (value) {
-                                if (value == null) {
-                                  return "Password required.";
-                                }
-                                if (value.length < 8) {
-                                  return "Password should be minimum 8 characters.";
-                                }
-                              },
-                              decoration: InputDecoration(
-                                suffixIcon: GestureDetector(
-                                  onTap: (){
-                                    setState(() {
-                                      _obscureText = !_obscureText;
-                                    });
-                                  },
-                                  child: Icon(
-                                    _obscureText ? Icons.visibility_off_rounded: Icons.visibility,
-                                    color: secondaryBlack,
-                                    size: 18.sp,
-                                  ),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 16.h),
+                          child: Text("Login", style: myStyleMontserrat(22.sp, primaryBlack, FontWeight.w500),),
+                        ),
+                        Container(
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Enter Number",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
+                              SizedBox(height: 4.h,),
+                              TextFormField(
+                                keyboardType: TextInputType.number,
+                                textInputAction: TextInputAction.next,
+                                controller: numberController,
+                                style: TextStyle(color: secondaryBlack),
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "Phone Number required.";
+                                  }
+                                  if (value?.length != 11){
+                                    return 'Phone Number must be of 11 digit.';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
+                                  hintText: "Enter Your Phone Number",
+                                  hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
+                                  filled: true,
+                                  fillColor: textFieldColor,
+                                  border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.circular(8.r)),
                                 ),
-                                contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
-                                hintText: "Enter Your Password",
-                                hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
-                                filled: true,
-                                fillColor: textFieldColor,
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(8.r)),
                               ),
-                            ),
+                              SizedBox(height: 10.h,),
+                              Text("Enter Password",style: myStyleMontserrat(12.sp, primaryBlack, FontWeight.w400),),
+                              SizedBox(height: 4.h,),
+                              TextFormField(
+                                keyboardType: TextInputType.text,
+                                textInputAction: TextInputAction.next,
+                                obscureText: _obscureText,
+                                controller: passwordController,
+                                style: TextStyle(color: secondaryBlack),
+                                validator: (value) {
+                                  if (value == null) {
+                                    return "Password required.";
+                                  }
+                                  if (value.length < 8) {
+                                    return "Password should be minimum 8 characters.";
+                                  }
+                                },
+                                decoration: InputDecoration(
+                                  suffixIcon: GestureDetector(
+                                    onTap: (){
+                                      setState(() {
+                                        _obscureText = !_obscureText;
+                                      });
+                                    },
+                                    child: Icon(
+                                      _obscureText ? Icons.visibility_off_rounded: Icons.visibility,
+                                      color: secondaryBlack,
+                                      size: 18.sp,
+                                    ),
+                                  ),
+                                  contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
+                                  hintText: "Enter Your Password",
+                                  hintStyle: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),
+                                  filled: true,
+                                  fillColor: textFieldColor,
+                                  border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.circular(8.r)),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 25.h,),
+                        customButton(() {
+                          if(_formKey.currentState!.validate()) {
+                            getLoginData();
+                          }
+                        }, "Login"),
+                        SizedBox(height: 10.h,),
+                        Text("Forgot Your Password?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
+                        SizedBox(height: 23.h,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Need an Account?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
+                            InkWell(
+                              onTap: (){
+                                Navigator.of(context).pushNamed(SignUpPage.routeName);
+                              },
+                                child: Text(" Sign up", style: myStyleMontserrat(14.sp, darkBlue, FontWeight.w600))),
                           ],
                         ),
-                      ),
-                      SizedBox(height: 25.h,),
-                      customButton(() {
-                        if(_formKey.currentState!.validate()) {
-                          getLoginData();
-                        }
-                      }, "Login"),
-                      SizedBox(height: 10.h,),
-                      Text("Forgot Your Password?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
-                      SizedBox(height: 23.h,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Need an Account?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
-                          InkWell(
-                            onTap: (){
-                              Navigator.of(context).pushNamed(SignUpPage.routeName);
-                            },
-                              child: Text(" Sign up", style: myStyleMontserrat(14.sp, darkBlue, FontWeight.w600))),
-                        ],
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 )
               ],
