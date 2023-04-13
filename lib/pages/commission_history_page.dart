@@ -1,6 +1,7 @@
 import 'package:bppshop/const/color.dart';
+import 'package:bppshop/const/commission_history_table.dart';
 import 'package:bppshop/const/style.dart';
-import 'package:bppshop/const/customer_table.dart';
+import 'package:bppshop/const/pending_commission_table.dart';
 import 'package:bppshop/drawer/my_drawer.dart';
 import 'package:bppshop/providers/bottom_navigation_bar_provider.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,7 @@ class _CommissionHistoryPageState extends State<CommissionHistoryPage> {
                     ),
                   ),
 
-                  ReusableCustomerTablePage(),
+                  CommissionHistoryTable(),
 
                   Padding(
                     padding: EdgeInsets.only(left: 12.w,right: 12.w, bottom: 12.h, top: 12.h),

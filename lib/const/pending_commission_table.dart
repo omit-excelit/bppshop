@@ -98,7 +98,7 @@ class _MyHomePageState extends State<ReusableCustomerTablePage> {
 }
 
 class Employee {
-  Employee(this.totalCommission, this.customerID, this.orderID, this.totalProducts, this.totalAmount);
+  Employee(this.customerID, this.orderID, this.totalProducts, this.totalAmount, this.totalCommission);
 
   final String customerID;
   final String orderID;
