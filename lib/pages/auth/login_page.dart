@@ -28,6 +28,7 @@ class _SigninPageState extends State<SigninPage> {
   bool _obscureText = true;
   bool isLoading = false;
   SharedPreferences ?sharedPreferences;
+  GlobalKey<FormState> _formKey = GlobalKey();
 
   getLoginData() async {
     try {
@@ -121,11 +122,11 @@ class _SigninPageState extends State<SigninPage> {
                               controller: numberController,
                               style: TextStyle(color: secondaryBlack),
                               validator: (value) {
-                                if (value?.length != 11){
-                                  return 'Phone Number must be of 11 digit.';
-                                }
                                 if (value == null) {
                                   return "Phone Number required.";
+                                }
+                                if (value?.length != 11){
+                                  return 'Phone Number must be of 11 digit.';
                                 }
                               },
                               decoration: InputDecoration(
@@ -184,7 +185,9 @@ class _SigninPageState extends State<SigninPage> {
                       ),
                       SizedBox(height: 25.h,),
                       customButton(() {
+                        if(_formKey.currentState!.validate()) {
                           getLoginData();
+                        }
                       }, "Login"),
                       SizedBox(height: 10.h,),
                       Text("Forgot Your Password?", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400)),
