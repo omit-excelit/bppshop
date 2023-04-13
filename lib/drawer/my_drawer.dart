@@ -13,6 +13,7 @@ import 'package:bppshop/pages/pending_commission_page.dart';
 import 'package:bppshop/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyDrawerPage extends StatefulWidget {
   static const String routeName = '/my_drawer';
@@ -24,6 +25,13 @@ class MyDrawerPage extends StatefulWidget {
 
 class _MyDrawerPageState extends State<MyDrawerPage> {
   int count = 1;
+
+  saveToken(token)async{
+    SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
+    var token = sharedPreferences.getString("token");
+    return token;
+  }
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -225,6 +233,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                       onTap: (){
                         setState(() {
                           count = 8;
+                          saveToken(null);
                         });
                         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
                       },

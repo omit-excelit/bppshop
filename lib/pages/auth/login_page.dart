@@ -42,17 +42,13 @@ class _SigninPageState extends State<SigninPage> {
         "agent_mobile_number": numberController.text.toString(),
         "password": passwordController.text.toString()
       });
-      //print("ddddddd${response.statusCode}");
-      //print("ddddddd${response.body}");
       setState(() {
         isLoading = false;
       });
-
       if(response.statusCode==200){
         var data = jsonDecode(response.body);
         if (data["token"] != null ) {
           print("Token is ${data["token"]}");
-          //showSnackBar(context: context, content: "Login Successfully");
           sharedPreferences = await SharedPreferences.getInstance();
           sharedPreferences!.setString("token", data["token"]);
           Provider.of<AuthProvider>(context ,listen: false);
@@ -60,18 +56,32 @@ class _SigninPageState extends State<SigninPage> {
           showToastMessage("Login Successfully");
         } else {
           showToastMessage("Email or Password doesn't match");
-          //showSnackBar(context: context, content: "Email or Password doesn't match");
         }
       }else{
         showToastMessage("Email or Password doesn't match");
-        //showSnackBar(context: context, content: "Email or Password doesn't match");
       }
     } catch (e) {
       print("Problem is ------ ${e}");
     }
   }
 
-
+  // isLoggedIn()async{
+  //   SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
+  //   var token=sharedPreferences.getString("token");
+  //   if(token!=null){
+  //     Provider.of<AuthProvider>(context,listen: false).setToken=token;
+  //     Navigator.of(context).pushNamedAndRemoveUntil(LandingPage.routeName, (route) => false);
+  //   }else{
+  //       Navigator.of(context).pushReplacementNamed(SigninPage.routeName);
+  //   }
+  // }
+  //
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //     isLoggedIn();
+  //   super.initState();
+  // }
 
   @override
   void dispose() {

@@ -4,15 +4,17 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 
 customCircularProgressIndicator(){
-  return SpinKitFadingCircle(
-    itemBuilder: (BuildContext context, int index) {
-      return DecoratedBox(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: primaryOrange,
-        ),
-      );
-    },
+  return Center(
+    child: SpinKitFadingCircle(
+      itemBuilder: (BuildContext context, int index) {
+        return DecoratedBox(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: primaryOrange,
+          ),
+        );
+      },
+    ),
   );
 }
 
