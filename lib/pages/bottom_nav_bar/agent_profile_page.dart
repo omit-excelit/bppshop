@@ -193,6 +193,8 @@ class _ProfileSectionState extends State<ProfileSection> {
           ),
         ],
       ),
-    ):customCircularProgressIndicator();
+    ):Center(
+      child: customCircularProgressIndicator(),
+    );
   }
 }

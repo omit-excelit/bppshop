@@ -100,7 +100,9 @@ class _DashboardPageState extends State<DashboardPage> {
                 ],
               ),
             ),
-          ):customCircularProgressIndicator(),
+          ):Center(
+            child: customCircularProgressIndicator(),
+          ),
           bottomNavigationBar: bottomNavigationBarProvider.bottomNavigationBar(context,false),
         );
       }
