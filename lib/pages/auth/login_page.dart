@@ -120,6 +120,14 @@ class _SigninPageState extends State<SigninPage> {
                               textInputAction: TextInputAction.next,
                               controller: numberController,
                               style: TextStyle(color: secondaryBlack),
+                              validator: (value) {
+                                if (value?.length != 11){
+                                  return 'Phone Number must be of 11 digit.';
+                                }
+                                if (value == null) {
+                                  return "Phone Number required.";
+                                }
+                              },
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(left: 12.w, right: 12.w),
                                 hintText: "Enter Your Phone Number",
@@ -140,6 +148,14 @@ class _SigninPageState extends State<SigninPage> {
                               obscureText: _obscureText,
                               controller: passwordController,
                               style: TextStyle(color: secondaryBlack),
+                              validator: (value) {
+                                if (value == null) {
+                                  return "Password required.";
+                                }
+                                if (value.length < 8) {
+                                  return "Password should be minimum 8 characters.";
+                                }
+                              },
                               decoration: InputDecoration(
                                 suffixIcon: GestureDetector(
                                   onTap: (){
