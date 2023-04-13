@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../const/show_logout_alert.dart';
+
 class MyDrawerPage extends StatefulWidget {
   static const String routeName = '/my_drawer';
   const MyDrawerPage({Key? key}) : super(key: key);
@@ -231,11 +233,12 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                     ),
                     GestureDetector(
                       onTap: (){
+                        logoutAlert(context);
                         setState(() {
                           count = 8;
                           saveToken(null);
                         });
-                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>SigninPage()), (route) => false);
+                        //Navigator.of(context).pushNamedAndRemoveUntil(SigninPage.routeName, (route) => false);
                       },
                       child: Container(
                         margin: EdgeInsets.only(left: 16.w, top: 34.h),
