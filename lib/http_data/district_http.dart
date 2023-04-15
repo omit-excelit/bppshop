@@ -14,6 +14,7 @@ class DistrictHttpRequest{
       var data = jsonDecode(response.body);
       print("profile details areeeeeeeeeeeeeeeeeeeeeee ${response.body}");
 
+
       districtModel = DistrictModel.fromJson(data);
       districtData.add(districtModel);
 
