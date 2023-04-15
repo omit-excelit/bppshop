@@ -293,7 +293,7 @@ class _OrderHistoryTableState extends State<OrderHistoryTable> {
                   style: myStyleMontserrat(12.sp, countColor, FontWeight.w600),))),
         GridColumn(
             columnWidthMode: ColumnWidthMode.auto,
-            minimumWidth: 72.w,
+            minimumWidth: 80.w,
             columnName: 'action',
             label: Container(
                 color: primaryDeepBlue,
@@ -402,7 +402,7 @@ class OrderHistoryTableDataSource extends DataGridSource {
           ),
         ):Container(
           alignment: Alignment.centerLeft,
-          padding: EdgeInsets.all(12),
+          padding: EdgeInsets.symmetric(horizontal: 12.w),
           child: Text(e.value.toString(),
             style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),
           ),

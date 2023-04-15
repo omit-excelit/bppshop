@@ -173,7 +173,7 @@ class CustomerListTableDataSource extends DataGridSource {
             ),
           ):Container(
             alignment: Alignment.centerLeft,
-            padding: EdgeInsets.all(12),
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Text(e.value.toString(),
               style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),
             ),

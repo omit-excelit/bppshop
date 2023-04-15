@@ -172,7 +172,7 @@ class TransactionTableDataSource extends DataGridSource {
         cells: row.getCells().map<Widget>((e) {
           return Container(
             alignment: Alignment.centerLeft,
-            padding: EdgeInsets.all(12),
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Text(e.value.toString(),
               style: myStyleMontserrat(12.sp, homeItemColor, FontWeight.w500),
             ),
