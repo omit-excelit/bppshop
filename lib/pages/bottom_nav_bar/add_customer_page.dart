@@ -160,7 +160,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                     _selectedDistrict = newValue as String?;
                                   });
                                 },
-                                items: districtData?.map((district) {
+                                items: districtData.map((district) {
                                   return DropdownMenuItem(
                                     child: Text("", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
                                     //value: district['id']

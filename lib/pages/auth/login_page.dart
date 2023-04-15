@@ -139,7 +139,7 @@ class _SigninPageState extends State<SigninPage> {
                                   if (value == null) {
                                     return "Phone Number required.";
                                   }
-                                  if (value?.length != 11){
+                                  else if (value?.length != 11){
                                     return 'Phone Number must be of 11 digit.';
                                   }
                                   return null;
@@ -168,7 +168,7 @@ class _SigninPageState extends State<SigninPage> {
                                   if (value == null) {
                                     return "Password required.";
                                   }
-                                  if (value.length < 8) {
+                                  else if (value.length < 8) {
                                     return "Password should be minimum 8 characters.";
                                   }
                                 },
