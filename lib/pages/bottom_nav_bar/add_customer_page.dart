@@ -162,10 +162,10 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                   });
                                 },
                                 items: districtData.map((district) {
-                                  print(district.data);
+                                  print(district.data.toString());
                                   return DropdownMenuItem(
                                     child: Text("", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
-                                    value: district.data
+                                    //value: district['id'].toString()
                                   );
                                 }).toList(),
                               ),
