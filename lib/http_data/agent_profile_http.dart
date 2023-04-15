@@ -11,9 +11,10 @@ class AgentProfileHttpRequest{
       AgentProfileModel agentProfileModel;
       String urlLink = "${baseUrl}agent/profile";
       var response = await http.get(Uri.parse(urlLink), headers: await CustomHttpRequest.getHeaderWithToken(),);
-      var data = jsonDecode(response.body);
+      var data = jsonDecode(response.body.toString());
       print("profile details areeeeeeeeeeeeeeeeeeeeeee ${response.body}");
 
+      //for(var )
       agentProfileModel = AgentProfileModel.fromJson(data);
       agentProfileData.add(agentProfileModel);
 

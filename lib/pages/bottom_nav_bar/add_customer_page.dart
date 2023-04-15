@@ -45,7 +45,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
   @override
   Widget build(BuildContext context) {
 
-    districtData = Provider.of<DistrictProvider>(context,listen: false).districtData;
+    districtData = Provider.of<DistrictProvider>(context, listen: false).districtData;
     print("=====> check districtData :${districtData}");
 
     return Scaffold(
