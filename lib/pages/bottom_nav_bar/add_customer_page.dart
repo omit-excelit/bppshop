@@ -30,7 +30,7 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
   final districtItems = ["Dhaka", "Bogura", "Rangpur"];
   final thanaItems = ["Mirpur", "Nandigram", "Kaonia"];
   final areaItems = ["Shewrapara", "Nagorkandi", "Kaonia"];
-  String ?_selectedDistrict;
+  String? _selectedDistrict;
   String ?_selectedThana;
   String ?_selectedArea;
 
@@ -162,10 +162,10 @@ class _AddCustomerPageState extends State<AddCustomerPage> {
                                   });
                                 },
                                 items: districtData.map((district) {
-                                  print(district.data.toString());
+                                  print("turfuygrtfuytuy--------------${district.data.toString()}");
                                   return DropdownMenuItem(
                                     child: Text("", style: myStyleMontserrat(14.sp, secondaryBlack, FontWeight.w400),),
-                                    //value: district['id'].toString()
+                                    value: district.data![0].id
                                   );
                                 }).toList(),
                               ),
